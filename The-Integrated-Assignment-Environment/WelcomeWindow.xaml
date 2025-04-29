@@ -1,0 +1,152 @@
+﻿<Window x:Class="The_Integrated_Assignment_Environment.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Welcome"
+        Height="500" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F7FA"
+        Icon="Resources/logo.ico">
+
+    <Window.Resources>
+    <Style x:Key="ModernButton" TargetType="Button">
+      <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="Height" Value="35"/>
+      <Setter Property="Width" Value="200"/>
+      <Setter Property="Background" Value="#2C3E50"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Grid>
+              <Border x:Name="shadow"
+                      Background="Transparent"
+                      CornerRadius="8">
+                <Border.Effect>
+                  <DropShadowEffect
+                    Color="Black"
+                    BlurRadius="12"
+                    ShadowDepth="2"
+                    Opacity="0.2"/>
+                </Border.Effect>
+              </Border>
+              <Border x:Name="border"
+                      Background="{TemplateBinding Background}"
+                      CornerRadius="8"
+                      SnapsToDevicePixels="True">
+                <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+              </Border>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#34495E"/>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#1F2D3D"/>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    
+    <Style x:Key="OutlineButton"
+           TargetType="Button"
+           BasedOn="{StaticResource ModernButton}">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="#2C3E50"/>
+      <Setter Property="BorderThickness" Value="2"/>
+      <Setter Property="Foreground" Value="#2C3E50"/>
+    </Style>
+    <Style x:Key="NavButton" TargetType="Button">
+      <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="#2C3E50"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Padding" Value="12,4"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="4">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#ECEFF1"/>
+              </Trigger>
+              <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="border" Property="Background" Value="#CFD8DC"/>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Opacity" Value="0.5"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+
+  <Grid>
+    <DockPanel LastChildFill="True">
+      <Menu DockPanel.Dock="Top" Background="White">
+        <MenuItem Header="_Help">
+          <MenuItem Header="View _Help" Click="MenuHelp_Click"/>
+          <Separator/>
+          <MenuItem Header="_About" Click="MenuAbout_Click"/>
+        </MenuItem>
+      </Menu>
+      
+      <Viewbox Stretch="Uniform">
+        <Grid Width="500" Height="500">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+          </Grid.RowDefinitions>
+          
+          <Image Grid.Row="0"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom"
+                 Width="200" Height="200">
+            <Image.Source>
+              <BitmapImage UriSource="Resources/logo.png"/>
+            </Image.Source>
+            <Image.Effect>
+              <DropShadowEffect BlurRadius="20" ShadowDepth="0" Opacity="0.2"/>
+            </Image.Effect>
+          </Image>
+          
+          <TextBlock Grid.Row="1"
+                     Text="Integrated Assignment Environment"
+                     FontFamily="Segoe UI Semibold"
+                     FontSize="20"
+                     Foreground="#2C3E50"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Margin="0,20,0,20"/>
+          
+          <StackPanel Grid.Row="2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Top">
+            <Button Style="{StaticResource ModernButton}"
+                    Content="Create Assignment"
+                    Click="btnCreateAssignment_Click"
+                    Margin="0,0,0,12"/>
+            <Button Style="{StaticResource ModernButton}"
+                    Content="Open Assignment"
+                    Click="btnOpenAssignment_Click"/>
+          </StackPanel>
+        </Grid>
+      </Viewbox>
+    </DockPanel>
+  </Grid>
+</Window>

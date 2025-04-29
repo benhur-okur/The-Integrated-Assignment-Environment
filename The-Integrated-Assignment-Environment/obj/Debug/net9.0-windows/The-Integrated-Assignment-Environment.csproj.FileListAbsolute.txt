@@ -3,11 +3,14 @@ C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrate
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\The-Integrated-Assignment-Environment.runtimeconfig.json
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\The-Integrated-Assignment-Environment.dll
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\The-Integrated-Assignment-Environment.pdb
-C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\AssignmentReportWindow.baml
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\CreateAssignmentWindow.baml
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\WelcomeWindow.baml
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\AssignmentReportWindow.g.cs
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\CreateAssignmentWindow.g.cs
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\WelcomeWindow.g.cs
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\App.g.cs
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment_MarkupCompile.cache
-C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment_MarkupCompile.lref
-C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment.g.resources
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment.AssemblyInfoInputs.cache
