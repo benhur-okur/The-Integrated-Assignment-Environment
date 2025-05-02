@@ -1,14 +1,10 @@
-using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using The_Integrated_Assignment_Environment.Models;
-using The_Integrated_Assignment_Environment.Services;
 
 namespace The_Integrated_Assignment_Environment;
 
 public partial class CreateAssignmentWindow : Window
 {
-    private ObservableCollection<Configuration> configurations;
+    private string selectedFolderPath = "";
 
     public CreateAssignmentWindow()
     {
@@ -25,7 +21,15 @@ public partial class CreateAssignmentWindow : Window
 
     private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
     {
-        // TODO: FolderBrowserDialog kullanarak klasör seçimi
+        using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+        {
+            var result = dialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                selectedFolderPath = dialog.SelectedPath;
+                lblSelectedFolderPath.Content = selectedFolderPath;
+            }
+        }
     }
 
     private void btnSelectExpectedOutput_Click(object sender, RoutedEventArgs e)
@@ -35,7 +39,40 @@ public partial class CreateAssignmentWindow : Window
 
     private void btnSaveAssignment_Click(object sender, RoutedEventArgs e)
     {
-        AssignmentReportWindow reportWindow = new AssignmentReportWindow();
+        var projectName = txtAssignmentName.Text;
+        var selectedConfig = ((ComboBoxItem)cmbConfiguration.SelectedItem)?.Content?.ToString();
+        var arguments = txtArguments.Text;
+
+        if (string.IsNullOrWhiteSpace(projectName) || string.IsNullOrWhiteSpace(selectedFolderPath))
+        {
+            System.Windows.MessageBox.Show("Assignment name and submission folder are required.");
+            return;
+        }
+
+        var config = new Configuration
+        {
+            LanguageName = selectedConfig ?? "Unknown",
+            CompilerPath = "path/to/compiler", // Daha sonra doldurulacak
+            CompileArguments = arguments,
+            RunCommandTemplate = "run {0}",
+            ExpectedOutputFilePath = "expected/output/path" // Bu da seçilen dosyadan alınmalı
+        };
+
+        var project = new Project
+        {
+            ProjectName = projectName,
+            Configuration = config,
+            SubmissionsFolderPath = selectedFolderPath,
+            Submissions = new List<StudentSubmission>(),
+            Results = new List<Result>()
+        };
+
+        // DEBUG: Verileri konsola yaz (veya sonra dosyaya kaydedersin)
+        Console.WriteLine($"Assignment: {project.ProjectName}, Folder: {project.SubmissionsFolderPath}, Language: {project.Configuration.LanguageName}");
+
+        System.Windows.MessageBox.Show("Assignment saved!");
+
+        var reportWindow = new AssignmentReportWindow(project);
         reportWindow.Show();
         this.Close();
     }

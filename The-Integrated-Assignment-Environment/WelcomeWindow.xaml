@@ -148,5 +148,6 @@
         </Grid>
       </Viewbox>
     </DockPanel>
-  </Grid>
+        <Border BorderBrush="Black" BorderThickness="1"/>
+    </Grid>
 </Window>
