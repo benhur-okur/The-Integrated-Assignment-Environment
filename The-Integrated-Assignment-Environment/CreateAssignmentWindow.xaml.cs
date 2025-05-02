@@ -68,6 +68,10 @@ public partial class CreateAssignmentWindow : Window
         Console.WriteLine($"Assignment: {project.ProjectName}, Folder: {project.SubmissionsFolderPath}, Language: {project.Configuration.LanguageName}");
 
         System.Windows.MessageBox.Show("Assignment saved!");
+
+        var reportWindow = new AssignmentReportWindow(project);
+        reportWindow.Show();
+        this.Close();
     }
 
 

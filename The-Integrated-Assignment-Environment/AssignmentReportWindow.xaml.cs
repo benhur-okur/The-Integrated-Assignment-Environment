@@ -12,15 +12,19 @@ namespace The_Integrated_Assignment_Environment;
 
 public partial class AssignmentReportWindow : Window
 {
-    private Project _project;
+    private Project currentProject;
     public ObservableCollection<Result> ResultList { get; set; } = new();
 
     public AssignmentReportWindow(Project project)
     {
         InitializeComponent();
-        _project = project;
+        currentProject = project;
         DataContext = this;
         ResultsDataGrid.ItemsSource = ResultList;
+
+        txtAssignmentName.Text = currentProject.ProjectName;
+        txtConfigurationName.Text = currentProject.Configuration.LanguageName;
+        txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
     }
 
     private void btnSelectZipDirectory_Click(object sender, RoutedEventArgs e)
@@ -28,7 +32,8 @@ public partial class AssignmentReportWindow : Window
         using var dialog = new System.Windows.Forms.FolderBrowserDialog();
         if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         {
-            _project.SubmissionsFolderPath = dialog.SelectedPath;
+            currentProject.SubmissionsFolderPath = dialog.SelectedPath;
+            txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
         }
     }
 
@@ -37,12 +42,12 @@ public partial class AssignmentReportWindow : Window
         var compiler = new CompilerService();
         var runner = new RunService();
 
-        string[] zipFiles = Directory.GetFiles(_project.SubmissionsFolderPath, "*.zip");
+        string[] zipFiles = Directory.GetFiles(currentProject.SubmissionsFolderPath, "*.zip");
 
         foreach (var zipFile in zipFiles)
         {
             string studentId = Path.GetFileNameWithoutExtension(zipFile);
-            string extractPath = Path.Combine(_project.SubmissionsFolderPath, studentId);
+            string extractPath = Path.Combine(currentProject.SubmissionsFolderPath, studentId);
 
             if (Directory.Exists(extractPath))
                 Directory.Delete(extractPath, true);
@@ -56,16 +61,16 @@ public partial class AssignmentReportWindow : Window
                 SourceFilePath = Path.Combine(extractPath, "main.c") // sabit, ileride dinamik yapılabilir
             };
 
-            _project.Submissions.Add(submission);
+            currentProject.Submissions.Add(submission);
 
-            var result = compiler.Compile(submission, _project.Configuration);
+            var result = compiler.Compile(submission, currentProject.Configuration);
 
             if (result.CompilationSuccess)
             {
-                result = runner.Run(submission, _project.Configuration);
+                result = runner.Run(submission, currentProject.Configuration);
             }
 
-            _project.Results.Add(result);
+            currentProject.Results.Add(result);
             ResultList.Add(result);
         }
 
@@ -77,7 +82,7 @@ public partial class AssignmentReportWindow : Window
         var dialog = new Microsoft.Win32.SaveFileDialog { Filter = "Project Files (*.json)|*.json" };
         if (dialog.ShowDialog() == true)
         {
-            string json = System.Text.Json.JsonSerializer.Serialize(_project, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            string json = System.Text.Json.JsonSerializer.Serialize(currentProject, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(dialog.FileName, json);
             System.Windows.MessageBox.Show("Proje kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
         }
@@ -89,9 +94,9 @@ public partial class AssignmentReportWindow : Window
         if (dialog.ShowDialog() == true)
         {
             string json = File.ReadAllText(dialog.FileName);
-            _project = System.Text.Json.JsonSerializer.Deserialize<Project>(json);
+            currentProject = System.Text.Json.JsonSerializer.Deserialize<Project>(json);
             ResultList.Clear();
-            foreach (var r in _project.Results)
+            foreach (var r in currentProject.Results)
                 ResultList.Add(r);
             System.Windows.MessageBox.Show("Proje yüklendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
         }
