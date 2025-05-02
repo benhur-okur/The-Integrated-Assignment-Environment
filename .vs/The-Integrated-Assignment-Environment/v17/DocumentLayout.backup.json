@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\benhu\\onedrive\\masa\u00FCst\u00FC\\bu\\the-integrated-assignment-environment\\assignmentreportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\assignmentreportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\benhu\\onedrive\\masa\u00FCst\u00FC\\bu\\the-integrated-assignment-environment\\createassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\createassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\benhu\\onedrive\\masa\u00FCst\u00FC\\bu\\the-integrated-assignment-environment\\assignmentreportwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\assignmentreportwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 345,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AssignmentReportWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs*",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAiwCMAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T19:15:00.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CreateAssignmentWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "ToolTip": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAcwEkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T15:57:44.41Z",
               "EditorCaption": ""
@@ -38,6 +59,39 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "558227a3-6ddb-478f-a3eb-6597c472fb5c",
+        "Display": 1,
+        "X": 878,
+        "Y": 285,
+        "Width": 1093,
+        "Height": 627,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AssignmentReportWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml",
+              "ToolTip": "C:\\Users\\benhu\\OneDrive\\Masa\u00FCst\u00FC\\bu\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-02T19:39:28.451Z",
+              "EditorCaption": ""
             }
           ]
         }
