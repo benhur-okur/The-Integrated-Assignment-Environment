@@ -121,10 +121,17 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Background="#2d3e50" Grid.Column="0">
-            <TextBlock Text="IAE" Foreground="White" FontSize="26" Margin="20" FontWeight="Bold" />
-            <Button Content="New Configuration" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Import Configuration" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Export Configuration" Style="{StaticResource SidebarButtonStyle}" />
+            <Button x:Name="btnBack"
+                    Style="{StaticResource AnimatedBackButtonStyle}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10"
+                    Click="btnBack_Click"
+                    ToolTip="Go Back">
+                <Image Source="Resources/back.png"/>
+            </Button>
+            
+            <Button Content="Configurations" Style="{StaticResource SidebarButtonStyle}" Click="btnNewConfiguration_Click"/>
             <Separator Margin="10"/>
             <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" />
             <Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}" />
@@ -149,11 +156,7 @@
                 
                 <StackPanel Margin="0,0,0,15">
                     <TextBlock Text="Select Configuration:" FontSize="14" Margin="0,0,0,5"/>
-                    <ComboBox x:Name="cmbConfiguration" Height="35"  >
-                        <ComboBoxItem Content="C Programming"/>
-                        <ComboBoxItem Content="Java Programming"/>
-                        <ComboBoxItem Content="Python Programming"/>
-                    </ComboBox>
+                    <ComboBox x:Name="cmbConfiguration" Height="35" DisplayMemberPath="LanguageName" />
                 </StackPanel>
                 
                 <StackPanel Margin="0,0,0,15" Orientation="Horizontal" VerticalAlignment="Center">
