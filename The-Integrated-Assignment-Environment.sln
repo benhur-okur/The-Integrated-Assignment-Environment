@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The-Integrated-Assignment-Environment", "The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment.csproj", "{1C90459D-68CC-4D97-97FA-EA19A3430FE6}"
 EndProject
 Global
@@ -12,5 +15,11 @@ Global
 		{1C90459D-68CC-4D97-97FA-EA19A3430FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C90459D-68CC-4D97-97FA-EA19A3430FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C90459D-68CC-4D97-97FA-EA19A3430FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3892C401-EC4A-4862-9138-38E2E5CD8C9C}
 	EndGlobalSection
 EndGlobal

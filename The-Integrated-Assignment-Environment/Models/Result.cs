@@ -7,6 +7,8 @@ public class Result
     public bool ExecutionSuccess { get; set; }
     public bool OutputMatch { get; set; }
     public string ErrorMessage { get; set; }
+    public string Output { get; set; }
+
 
     public Result() { }
 }
