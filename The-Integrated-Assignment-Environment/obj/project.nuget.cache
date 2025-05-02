@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nMwqK6mVw6M=",
+  "dgSpecHash": "QDT9X0RoVrI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\efese\\RiderProjects\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\efese\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\efese\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+  ],
   "logs": []
 }

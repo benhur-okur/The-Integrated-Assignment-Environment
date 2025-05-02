@@ -6,14 +6,13 @@ using System.Windows;
 using The_Integrated_Assignment_Environment.Models;
 using The_Integrated_Assignment_Environment.Services;
 
-
-
 namespace The_Integrated_Assignment_Environment;
 
 public partial class AssignmentReportWindow : Window
 {
     private Project currentProject;
     public ObservableCollection<Result> ResultList { get; set; } = new();
+    private ObservableCollection<Configuration> configurations;
 
     public AssignmentReportWindow(Project project)
     {
@@ -25,6 +24,13 @@ public partial class AssignmentReportWindow : Window
         txtAssignmentName.Text = currentProject.ProjectName;
         txtConfigurationName.Text = currentProject.Configuration.LanguageName;
         txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
+    }
+    
+    private void LoadConfigurations()
+    {
+        configurations = ConfigurationService.LoadAll();
+        //cmbConfiguration.ItemsSource = configurations;
+        //cmbConfiguration.DisplayMemberPath = "LanguageName";
     }
 
     private void btnSelectZipDirectory_Click(object sender, RoutedEventArgs e)
@@ -58,7 +64,7 @@ public partial class AssignmentReportWindow : Window
             {
                 StudentId = studentId,
                 ExtractedFolderPath = extractPath,
-                SourceFilePath = Path.Combine(extractPath, "main.c") // sabit, ileride dinamik yapılabilir
+                SourceFilePath = Path.Combine(extractPath, "main.c") // ileride dinamik yapılabilir
             };
 
             currentProject.Submissions.Add(submission);
@@ -67,7 +73,11 @@ public partial class AssignmentReportWindow : Window
 
             if (result.CompilationSuccess)
             {
-                result = runner.Run(submission, currentProject.Configuration);
+                // 🔁 Eskiden sadece config gönderiliyordu:
+                // result = runner.Run(submission, currentProject.Configuration);
+
+                // ✅ Şimdi tüm project nesnesi gönderiliyor:
+                result = runner.Run(submission, currentProject);
             }
 
             currentProject.Results.Add(result);
@@ -100,5 +110,20 @@ public partial class AssignmentReportWindow : Window
                 ResultList.Add(r);
             System.Windows.MessageBox.Show("Proje yüklendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+    }
+    
+    private void btnBack_Click(object sender, RoutedEventArgs e)
+    {
+        var createAssignmentWindow = new CreateAssignmentWindow();
+        createAssignmentWindow.Show();
+        this.Close();
+    }
+    private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
+    {
+        var configWindow = new ConfigurationWindow();
+        configWindow.ShowDialog();
+
+        // Config penceresi kapandıktan sonra yeniden yükle
+        LoadConfigurations();
     }
 }

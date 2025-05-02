@@ -121,15 +121,22 @@
 
         <!-- Sidebar -->
         <StackPanel Background="#2d3e50" Grid.Column="0">
-            <TextBlock Text="IAE" Foreground="White" FontSize="26" Margin="20" FontWeight="Bold"/>
-            <Button Content="New Configuration" Style="{StaticResource SidebarButtonStyle}"/>
-            <Button Content="Import Configuration" Style="{StaticResource SidebarButtonStyle}"/>
-            <Button Content="Export Configuration" Style="{StaticResource SidebarButtonStyle}"/>
+            <Button x:Name="btnBack"
+                    Style="{StaticResource AnimatedBackButtonStyle}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10"
+                    Click="btnBack_Click"
+                    ToolTip="Go Back">
+                <Image Source="Resources/back.png"/>
+            </Button>
+            
+            <Button Content="Configurations" Style="{StaticResource SidebarButtonStyle}" Click="btnNewConfiguration_Click"/>
             <Separator Margin="10"/>
-            <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}"/>
-            <Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}"/>
+            <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}" />
             <Separator Margin="10"/>
-            <Button Content="Help" Style="{StaticResource SidebarButtonStyle}"/>
+            <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" />
         </StackPanel>
 
         <!-- Main Content -->

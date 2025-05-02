@@ -1,6 +1,8 @@
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using The_Integrated_Assignment_Environment.Models;
+using The_Integrated_Assignment_Environment.Services;
 
 
 namespace The_Integrated_Assignment_Environment;
@@ -9,10 +11,19 @@ public partial class CreateAssignmentWindow : Window
 
 {
     private string selectedFolderPath = "";
-
+    private string expectedOutputFilePath = "";
+    private ObservableCollection<Configuration> configurations;
     public CreateAssignmentWindow()
     {
         InitializeComponent();
+        LoadConfigurations();
+    }
+    
+    private void LoadConfigurations()
+    {
+        configurations = ConfigurationService.LoadAll();
+        cmbConfiguration.ItemsSource = configurations;
+        cmbConfiguration.DisplayMemberPath = "LanguageName";
     }
 
     private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
@@ -31,13 +42,24 @@ public partial class CreateAssignmentWindow : Window
 
     private void btnSelectExpectedOutput_Click(object sender, RoutedEventArgs e)
     {
-        // TODO: OpenFileDialog ile beklenen output dosyası seçimi
+        var dialog = new Microsoft.Win32.OpenFileDialog
+        {
+            Title = "Select Expected Output File",
+            Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
+        };
+
+        if (dialog.ShowDialog() == true)
+        {
+            lblExpectedOutputPath.Content = dialog.FileName;
+            expectedOutputFilePath = dialog.FileName; // expectedOutputFilePath diye bir alan tanımlamalısın
+        }
     }
+
 
     private void btnSaveAssignment_Click(object sender, RoutedEventArgs e)
     {
         var projectName = txtAssignmentName.Text;
-        var selectedConfig = ((ComboBoxItem)cmbConfiguration.SelectedItem)?.Content?.ToString();
+        var selectedConfig = cmbConfiguration.SelectedItem as Configuration;
         var arguments = txtArguments.Text;
 
         if (string.IsNullOrWhiteSpace(projectName) || string.IsNullOrWhiteSpace(selectedFolderPath))
@@ -46,13 +68,18 @@ public partial class CreateAssignmentWindow : Window
             return;
         }
 
+        if (selectedConfig == null)
+        {
+            System.Windows.MessageBox.Show("Please select a configuration.");
+            return;
+        }
+
+        // Yeni bir Configuration nesnesi oluşturmak yerine mevcut olanı doğrudan kullanıyoruz
         var config = new Configuration
         {
-            LanguageName = selectedConfig ?? "Unknown",
-            CompilerPath = "path/to/compiler", // Daha sonra doldurulacak
-            CompileArguments = arguments,
-            RunCommandTemplate = "run {0}",
-            ExpectedOutputFilePath = "expected/output/path" // Bu da seçilen dosyadan alınmalı
+            LanguageName = selectedConfig.LanguageName,
+            CompilerPath = selectedConfig.CompilerPath,
+            CompileArguments = selectedConfig.CompileArguments
         };
 
         var project = new Project
@@ -60,11 +87,12 @@ public partial class CreateAssignmentWindow : Window
             ProjectName = projectName,
             Configuration = config,
             SubmissionsFolderPath = selectedFolderPath,
+            RunArguments = arguments,
+            ExpectedOutputFilePath = expectedOutputFilePath,
             Submissions = new List<StudentSubmission>(),
             Results = new List<Result>()
         };
 
-        // DEBUG: Verileri konsola yaz (veya sonra dosyaya kaydedersin)
         Console.WriteLine($"Assignment: {project.ProjectName}, Folder: {project.SubmissionsFolderPath}, Language: {project.Configuration.LanguageName}");
 
         System.Windows.MessageBox.Show("Assignment saved!");
@@ -74,5 +102,19 @@ public partial class CreateAssignmentWindow : Window
         this.Close();
     }
 
+    private void btnBack_Click(object sender, RoutedEventArgs e)
+    {
+        WelcomeWindow welcome = new WelcomeWindow();
+        welcome.Show();
+        this.Close();
+    }
+    private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
+    {
+        var configWindow = new ConfigurationWindow();
+        configWindow.ShowDialog();
+
+        // Config penceresi kapandıktan sonra yeniden yükle
+        LoadConfigurations();
+    }
 
 }

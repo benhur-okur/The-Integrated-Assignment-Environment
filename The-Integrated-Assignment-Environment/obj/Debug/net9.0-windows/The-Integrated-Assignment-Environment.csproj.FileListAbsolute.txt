@@ -46,3 +46,16 @@ C:\Users\benhu\OneDrive\Masaüstü\bu\The-Integrated-Assignment-Environment\bin\
 C:\Users\benhu\OneDrive\Masaüstü\bu\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\The-Integrated-Assignment-Environment.pdb
 C:\Users\benhu\OneDrive\Masaüstü\bu\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment.genruntimeconfig.cache
 C:\Users\benhu\OneDrive\Masaüstü\bu\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\ref\The-Integrated-Assignment-Environment.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment.csproj.AssemblyReference.cache
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\System.Data.SQLite.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Inte.F9F518B4.Up2Date
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\ConfigurationForm.g.cs
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\ConfigurationWindow.g.cs
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\The-Integrated-Assignment-Environment_MarkupCompile.lref
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\ConfigurationWindow.baml
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\ConfigurationForm.baml
+C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\App.baml

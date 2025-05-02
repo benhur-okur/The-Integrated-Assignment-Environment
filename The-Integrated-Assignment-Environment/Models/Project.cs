@@ -8,7 +8,11 @@ namespace The_Integrated_Assignment_Environment.Models
         public string ProjectName { get; set; }
         public Configuration Configuration { get; set; }
         public string SubmissionsFolderPath { get; set; }
+        public string RunArguments { get; set; } // yeni
+        public string ExpectedOutputFilePath { get; set; } // yeni
+
         public List<StudentSubmission> Submissions { get; set; } = new();
         public List<Result> Results { get; set; } = new();
     }
+
 }

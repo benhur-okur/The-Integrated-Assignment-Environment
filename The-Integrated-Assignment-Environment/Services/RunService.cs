@@ -6,15 +6,18 @@ namespace The_Integrated_Assignment_Environment.Services;
 
 public class RunService
 {
-    public Result Run(StudentSubmission submission, Configuration config)
+    public Result Run(StudentSubmission submission, Project project)
     {
         Result result = new() { StudentId = submission.StudentId };
 
-        string runCommand = config.RunCommandTemplate.Replace("{args}", config.RunArguments);
+        
+        string executablePath = Path.Combine(submission.ExtractedFolderPath, "program.exe");
+        
+        string arguments = project.RunArguments;
 
         var process = new Process
         {
-            StartInfo = new ProcessStartInfo("cmd.exe", $"/C {runCommand}")
+            StartInfo = new ProcessStartInfo(executablePath, arguments)
             {
                 WorkingDirectory = submission.ExtractedFolderPath,
                 RedirectStandardOutput = true,
@@ -33,7 +36,7 @@ public class RunService
 
             result.ExecutionSuccess = process.ExitCode == 0;
             result.Output = output;
-            result.OutputMatch = CompareOutput(output, config.ExpectedOutputFilePath);
+            result.OutputMatch = CompareOutput(output, project.ExpectedOutputFilePath);
 
             if (!result.ExecutionSuccess)
                 result.ErrorMessage = error;
@@ -49,6 +52,9 @@ public class RunService
 
     private bool CompareOutput(string actualOutput, string expectedFilePath)
     {
+        if (!File.Exists(expectedFilePath))
+            return false;
+
         string expected = File.ReadAllText(expectedFilePath);
         return actualOutput.Trim() == expected.Trim();
     }
