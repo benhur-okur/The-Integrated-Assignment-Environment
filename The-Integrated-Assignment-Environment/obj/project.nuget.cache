@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nMwqK6mVw6M=",
+  "dgSpecHash": "FKvifvxC/3w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+  "projectFilePath": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Önbellek dosyası C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\obj\\project.nuget.cache okunurken bir sorun oluştu : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
