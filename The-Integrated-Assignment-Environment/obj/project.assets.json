@@ -8,23 +8,23 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\benhu\\.nuget\\packages\\": {},
+    "C:\\Users\\Excalıbur\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "projectUniqueName": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
       "projectName": "The-Integrated-Assignment-Environment",
-      "projectPath": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
-      "packagesPath": "C:\\Users\\benhu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\obj\\",
+      "projectPath": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "packagesPath": "C:\\Users\\Excalıbur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\benhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Excalıbur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -78,13 +78,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Önbellek dosyası C:\\Users\\benhu\\OneDrive\\Masaüstü\\bu\\The-Integrated-Assignment-Environment\\obj\\project.nuget.cache okunurken bir sorun oluştu : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
