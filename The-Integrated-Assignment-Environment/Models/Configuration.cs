@@ -6,8 +6,7 @@ namespace The_Integrated_Assignment_Environment.Models;
         public string LanguageName { get; set; }
         public string CompilerPath { get; set; }
         public string CompileArguments { get; set; }
-        public string RunCommandTemplate { get; set; }
-        public string ExpectedOutputFilePath { get; set; }
+       
 
         public Configuration() { }
     }

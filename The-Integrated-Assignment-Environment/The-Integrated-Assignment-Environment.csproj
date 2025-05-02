@@ -16,6 +16,13 @@
       <Resource Include="Resources\logo.ico" />
       <None Remove="Resources\logo.png" />
       <Resource Include="Resources\logo.png" />
+      <None Remove="Resources\back.png" />
+      <Resource Include="Resources\back.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SQLite" Version="3.13.0" />
+      <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
     </ItemGroup>
 
 </Project>
