@@ -1,5 +1,5 @@
 <Window x:Class="The_Integrated_Assignment_Environment.AssignmentReportWindow"
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Assignment Report"
         Height="600" Width="1000"
@@ -8,33 +8,34 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         Icon="Resources/logo.ico">
 
     <Window.Resources>
-            <Style x:Key="SidebarButtonStyle" TargetType="Button">
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Margin" Value="10,5"/>
-                <Setter Property="Padding" Value="10"/>
-                <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" 
-                                    BorderBrush="{TemplateBinding BorderBrush}" 
-                                    BorderThickness="0" 
-                                    CornerRadius="5">
-                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="#3c5978"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="0" 
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#3c5978"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="SoftTextBoxStyle" TargetType="TextBox">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
@@ -57,6 +58,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 </Setter.Value>
             </Setter>
         </Style>
+
         <Style x:Key="GraySoftButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#dddddd"/> 
             <Setter Property="Foreground" Value="Black"/>
@@ -87,6 +89,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 </Setter.Value>
             </Setter>
         </Style>
+
         <Style TargetType="Button" x:Key="SoftButtonStyle">
             <Setter Property="Background" Value="#2C3E50"/> 
             <Setter Property="Foreground" Value="White"/>   
@@ -108,7 +111,6 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 </Setter.Value>
             </Setter>
         </Style>
-
     </Window.Resources>
 
     <Grid>
@@ -117,15 +119,19 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        
-        
+        <!-- Sidebar -->
         <StackPanel Background="#2d3e50" Grid.Column="0">
-            <TextBlock Text="IAE" Foreground="White" FontSize="26" 
-                       Margin="20" FontWeight="Bold" />
-
-            <Button Content="New Configuration" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Import Configuration" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Export Configuration" Style="{StaticResource SidebarButtonStyle}" />
+            <Button x:Name="btnBack"
+                    Style="{StaticResource AnimatedBackButtonStyle}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10"
+                    Click="btnBack_Click"
+                    ToolTip="Go Back">
+                <Image Source="Resources/back.png"/>
+            </Button>
+            
+            <Button Content="Configurations" Style="{StaticResource SidebarButtonStyle}" Click="btnNewConfiguration_Click"/>
             <Separator Margin="10"/>
             <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" />
             <Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}" />
@@ -133,7 +139,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" />
         </StackPanel>
 
-        
+        <!-- Main Content -->
         <ScrollViewer Grid.Column="1" Margin="30">
             <StackPanel Width="700" HorizontalAlignment="Left">
                 <TextBlock Text="Assignment Report"
@@ -141,7 +147,6 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                            FontWeight="Bold"
                            Margin="0,0,0,20"/>
 
-                
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                     <TextBlock Text="Assignment:" FontSize="14" Width="100" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtAssignmentName"
@@ -162,7 +167,6 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                              Style="{StaticResource SoftTextBoxStyle}"/>
                 </StackPanel>
 
-                
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                     <Button Content="Change ZIP Directory"
                             Width="180" Height="35"
@@ -184,7 +188,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             Margin="30,0,0,0"
                             HorizontalAlignment="Left"/>
                 </StackPanel>
-                
+
                 <Border Background="White" CornerRadius="10" Padding="10" BorderBrush="#ddd" BorderThickness="1">
                     <DataGrid x:Name="ResultsDataGrid"
                               AutoGenerateColumns="False"
@@ -203,6 +207,5 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
             </StackPanel>
         </ScrollViewer>
-
     </Grid>
 </Window>
