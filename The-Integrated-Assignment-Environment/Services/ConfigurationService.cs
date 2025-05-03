@@ -15,12 +15,12 @@ namespace The_Integrated_Assignment_Environment.Services
             using var conn = new SQLiteConnection($"Data Source={dbPath};Version=3;");
             conn.Open();
 
-            // Tablonun var olup olmadığını kontrol et ve oluştur (yalnızca 3 alan içeriyor)
+            // Tabloyu oluştur (gerekirse)
             var createTableCmd = new SQLiteCommand(@"
                 CREATE TABLE IF NOT EXISTS Configurations (
                     Language TEXT PRIMARY KEY,
-                    CompilerPath TEXT,
-                    Arguments TEXT
+                    CompileCommand TEXT,
+                    RunCommand TEXT
                 )", conn);
             createTableCmd.ExecuteNonQuery();
 
@@ -32,8 +32,8 @@ namespace The_Integrated_Assignment_Environment.Services
                 list.Add(new Configuration
                 {
                     LanguageName = reader["Language"].ToString(),
-                    CompilerPath = reader["CompilerPath"].ToString(),
-                    CompileArguments = reader["Arguments"].ToString()
+                    CompileCommand = reader["CompileCommand"].ToString(),
+                    RunCommand = reader["RunCommand"].ToString()
                 });
             }
 
@@ -48,15 +48,19 @@ namespace The_Integrated_Assignment_Environment.Services
             try
             {
                 var cmd = new SQLiteCommand(
-                    "INSERT INTO Configurations (Language, CompilerPath, Arguments) VALUES (@lang, @comp, @args)", conn);
+                    @"INSERT INTO Configurations 
+                      (Language, CompileCommand, RunCommand) 
+                      VALUES (@lang, @compile, @run)", conn);
+
                 cmd.Parameters.AddWithValue("@lang", config.LanguageName);
-                cmd.Parameters.AddWithValue("@comp", config.CompilerPath);
-                cmd.Parameters.AddWithValue("@args", config.CompileArguments);
+                cmd.Parameters.AddWithValue("@compile", config.CompileCommand);
+                cmd.Parameters.AddWithValue("@run", config.RunCommand);
                 cmd.ExecuteNonQuery();
             }
             catch (SQLiteException ex)
             {
-                System.Windows.MessageBox.Show($"Failed to add configuration:\n{ex.Message}", "Database Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show($"Failed to add configuration:\n{ex.Message}", "Database Error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -66,10 +70,14 @@ namespace The_Integrated_Assignment_Environment.Services
             conn.Open();
 
             var cmd = new SQLiteCommand(
-                "UPDATE Configurations SET CompilerPath=@comp, Arguments=@args WHERE Language=@lang", conn);
+                @"UPDATE Configurations 
+                  SET CompileCommand = @compile, 
+                      RunCommand = @run 
+                  WHERE Language = @lang", conn);
+
             cmd.Parameters.AddWithValue("@lang", config.LanguageName);
-            cmd.Parameters.AddWithValue("@comp", config.CompilerPath);
-            cmd.Parameters.AddWithValue("@args", config.CompileArguments);
+            cmd.Parameters.AddWithValue("@compile", config.CompileCommand);
+            cmd.Parameters.AddWithValue("@run", config.RunCommand);
             cmd.ExecuteNonQuery();
         }
 
@@ -78,7 +86,7 @@ namespace The_Integrated_Assignment_Environment.Services
             using var conn = new SQLiteConnection($"Data Source={dbPath};Version=3;");
             conn.Open();
 
-            var cmd = new SQLiteCommand("DELETE FROM Configurations WHERE Language=@lang", conn);
+            var cmd = new SQLiteCommand("DELETE FROM Configurations WHERE Language = @lang", conn);
             cmd.Parameters.AddWithValue("@lang", config.LanguageName);
             cmd.ExecuteNonQuery();
         }

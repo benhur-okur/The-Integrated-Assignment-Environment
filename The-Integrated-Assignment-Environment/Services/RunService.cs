@@ -6,24 +6,31 @@ namespace The_Integrated_Assignment_Environment.Services;
 
 public class RunService
 {
-    public Result Run(StudentSubmission submission, Project project)
+    public Result Run(StudentSubmission submission, Project project, Result result)
     {
-        Result result = new() { StudentId = submission.StudentId };
+        string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(submission.SourceFilePath);
+        string runTemplate = project.Configuration.RunCommand ?? "";
+        string arguments = project.RunArguments ?? "";
 
-        
-        string executablePath = Path.Combine(submission.ExtractedFolderPath, "program.exe");
-        
-        string arguments = project.RunArguments;
+        string command = runTemplate.Replace("{file}", fileNameWithoutExtension);
+        string fullCommand = $"{command} {arguments}";
+
+        Console.WriteLine($"[Runner] Working Directory: {submission.ExtractedFolderPath}");
+        Console.WriteLine($"[Runner] RunCommand: {fullCommand}");
 
         var process = new Process
         {
-            StartInfo = new ProcessStartInfo(executablePath, arguments)
+            StartInfo = new ProcessStartInfo
             {
+                FileName = "cmd.exe",
+                Arguments = $"/C \"{fullCommand}\"",
                 WorkingDirectory = submission.ExtractedFolderPath,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
-                CreateNoWindow = true
+                CreateNoWindow = true,
+                StandardOutputEncoding = System.Text.Encoding.UTF8,
+                StandardErrorEncoding = System.Text.Encoding.UTF8
             }
         };
 
@@ -33,6 +40,10 @@ public class RunService
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
             process.WaitForExit();
+
+            Console.WriteLine($"[Runner] ExitCode: {process.ExitCode}");
+            Console.WriteLine($"[Runner] STDOUT:\n{output}");
+            Console.WriteLine($"[Runner] STDERR:\n{error}");
 
             result.ExecutionSuccess = process.ExitCode == 0;
             result.Output = output;
@@ -56,6 +67,11 @@ public class RunService
             return false;
 
         string expected = File.ReadAllText(expectedFilePath);
-        return actualOutput.Trim() == expected.Trim();
+
+        string Normalize(string input) =>
+            string.Join("\n", input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(line => line.Trim()));
+
+        return Normalize(actualOutput) == Normalize(expected);
     }
 }

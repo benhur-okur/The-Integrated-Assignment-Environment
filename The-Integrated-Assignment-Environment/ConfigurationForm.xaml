@@ -53,27 +53,31 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="0,10">
+        <StackPanel Grid.Row="0" Margin="0,10" VerticalAlignment="Stretch">
             <TextBlock Text="Language:"/>
             <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding Config.LanguageName, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
+        
 
-        <StackPanel Grid.Row="1" Margin="0,10">
-            <TextBlock Text="Compiler Path (Optional):"/>
-            <DockPanel>
-                <TextBox x:Name="txtCompilerPath" Style="{StaticResource ModernTextBox}" Text="{Binding Config.CompilerPath, UpdateSourceTrigger=PropertyChanged}" Width="350"/>
-                <Button Content="Browse" Width="75" Margin="5,0,0,0" Click="btnBrowse_Click" />
-            </DockPanel>
+        <StackPanel Grid.Row="1" Margin="0,10" VerticalAlignment="Stretch">
+            <TextBlock Text="Compile Command:" Margin="0,10,0,2"/>
+            <TextBox Text="{Binding Config.CompileCommand, UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource SoftTextBoxStyle}" 
+                     Name="txtCompileCommand"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Margin="0,10" VerticalAlignment="Stretch">
+            <TextBlock Text="Run Command:" Margin="0,10,0,2"/>
+            <TextBox Text="{Binding Config.RunCommand, UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource SoftTextBoxStyle}" 
+                     Name="txtRunCommand"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Margin="0,10">
-            <TextBlock Text="Compile Command:"/>
-            <TextBox Style="{StaticResource ModernTextBox}" Text="{Binding Config.CompileArguments, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" VerticalAlignment="Stretch">
             <Button Content="OK" Width="100" Margin="5" Style="{StaticResource PrimaryButton}" Click="btnOK_Click"/>
             <Button Content="Cancel" Width="100" Margin="5" Click="btnCancel_Click"/>
         </StackPanel>

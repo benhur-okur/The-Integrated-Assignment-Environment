@@ -29,7 +29,7 @@ namespace The_Integrated_Assignment_Environment
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Config.LanguageName) || string.IsNullOrWhiteSpace(Config.CompileArguments))
+            if (string.IsNullOrWhiteSpace(Config.LanguageName) || string.IsNullOrWhiteSpace(Config.CompileCommand))
             {
                 System.Windows.MessageBox.Show("Language and Compile Command cannot be empty.", 
                     "Validation Error", 
@@ -47,20 +47,7 @@ namespace The_Integrated_Assignment_Environment
             OnCancel?.Invoke();
         }
 
-        private void btnBrowse_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new Microsoft.Win32.OpenFileDialog
-            {
-                Title = "Select Compiler Executable",
-                Filter = "Executable Files (*.exe)|*.exe|All Files (*.*)|*.*"
-            };
-
-            if (dialog.ShowDialog() == true)
-            {
-                txtCompilerPath.Text = dialog.FileName;
-                Config.CompilerPath = dialog.FileName;
-            }
-        }
+        
 
         }
     }
