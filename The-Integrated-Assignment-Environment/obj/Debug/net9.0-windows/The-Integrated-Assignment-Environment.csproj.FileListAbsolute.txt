@@ -152,4 +152,7 @@ C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrate
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\bin\Debug\net9.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\OpenAssignmentWindow.baml
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\obj\Debug\net9.0-windows\OpenAssignmentWindow.g.cs
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -12,8 +12,13 @@ TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\App.xaml
 6-110256048
 
+<<<<<<< Updated upstream
 171021027584
 2111812081027
+=======
+18-821775542
+21541365517
+>>>>>>> Stashed changes
 AssignmentReportWindow.xaml;ConfigurationForm.xaml;ConfigurationWindow.xaml;CreateAssignmentWindow.xaml;OpenAssignmentWindow.xaml;WelcomeWindow.xaml;
 
 True

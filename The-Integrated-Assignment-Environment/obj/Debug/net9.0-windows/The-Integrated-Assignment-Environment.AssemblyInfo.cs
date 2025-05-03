@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("The-Integrated-Assignment-Environment")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ae96318fcb861db96a346832828c3a6de733542")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1848c9a19335e719d0086ed85a0d9387b68f36a")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("The-Integrated-Assignment-Environment")]
 [assembly: System.Reflection.AssemblyTitleAttribute("The-Integrated-Assignment-Environment")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
