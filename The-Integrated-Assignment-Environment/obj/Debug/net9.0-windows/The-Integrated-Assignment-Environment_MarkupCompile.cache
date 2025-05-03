@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 C:\Users\efese\RiderProjects\The-Integrated-Assignment-Environment\The-Integrated-Assignment-Environment\App.xaml
-5-266861642
+6-110256048
 
-16770049434
+171021027584
 2111812081027
-AssignmentReportWindow.xaml;ConfigurationForm.xaml;ConfigurationWindow.xaml;CreateAssignmentWindow.xaml;WelcomeWindow.xaml;
+AssignmentReportWindow.xaml;ConfigurationForm.xaml;ConfigurationWindow.xaml;CreateAssignmentWindow.xaml;OpenAssignmentWindow.xaml;WelcomeWindow.xaml;
 
-False
+True
 
