@@ -13,28 +13,9 @@ public class CompilerService
         string fileNameWithExtension = Path.GetFileName(submission.SourceFilePath);
         string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(submission.SourceFilePath);
 
-        string fullCommand;
-
-        switch (config.LanguageName)
-        {
-            case "C":
-                fullCommand = $"gcc {fileNameWithExtension} -o {fileNameWithoutExtension}.exe";
-                break;
-            case "C++":
-                fullCommand = $"g++ {fileNameWithExtension} -o {fileNameWithoutExtension}.exe";
-                break;
-            case "Java":
-                fullCommand = $"javac {fileNameWithExtension}";
-                break;
-            case "Python":
-                fullCommand = $"python -m py_compile {fileNameWithExtension}";
-                break;
-            case "Haskell":
-                fullCommand = $"ghc {fileNameWithExtension} -o {fileNameWithoutExtension}.exe";
-                break;
-            default:
-                throw new NotSupportedException("Unsupported language");
-        }
+        string fullCommand = config.CompileCommand
+            .Replace("{filename}", fileNameWithExtension)
+            .Replace("{file}", fileNameWithoutExtension);
 
         Console.WriteLine($"[Compiler] Working Directory: {submission.ExtractedFolderPath}");
         Console.WriteLine($"[Compiler] CompileCommand: {fullCommand}");
@@ -57,6 +38,10 @@ public class CompilerService
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
             process.WaitForExit();
+
+            Console.WriteLine($"[Compiler] ExitCode: {process.ExitCode}");
+            Console.WriteLine($"[Compiler] STDOUT:\n{output}");
+            Console.WriteLine($"[Compiler] STDERR:\n{error}");
 
             result.CompilationSuccess = process.ExitCode == 0;
             result.Output = output;
