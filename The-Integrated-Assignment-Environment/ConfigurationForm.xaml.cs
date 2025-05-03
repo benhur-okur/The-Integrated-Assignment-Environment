@@ -29,6 +29,7 @@ namespace The_Integrated_Assignment_Environment
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (string.IsNullOrWhiteSpace(Config.LanguageName) || string.IsNullOrWhiteSpace(Config.CompileCommand))
             {
                 System.Windows.MessageBox.Show("Language and Compile Command cannot be empty.", 
@@ -37,7 +38,7 @@ namespace The_Integrated_Assignment_Environment
                     MessageBoxImage.Warning);
 
                 return;
-            }
+            }*/
 
             OnSave?.Invoke(Config);
         }

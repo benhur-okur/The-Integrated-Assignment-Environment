@@ -1,69 +1,81 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\",
+  "WorkspaceRootPath": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\services\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\configurationform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\configurationform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\services\\compilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\compilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\configurationform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\configurationform.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\services\\runservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\services\\runservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\runservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\services\\compilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\compilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\services\\assignmentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\assignmentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\services\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\services\\configurationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\models\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\models\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\models\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\welcomewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\welcomewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\welcomewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\openassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\openassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\openassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\createassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\createassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\createassignmentwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\openassignmentwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\openassignmentwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\openassignmentwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\createassignmentwindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\createassignmentwindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\createassignmentwindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\welcomewindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\welcomewindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\welcomewindow.xaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\data\\projectdbhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\data\\projectdbhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\data\\projectdbhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\the-integrated-assignment-environment.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\the-integrated-assignment-environment.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\the-integrated-assignment-environment.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\models\\studentsubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\models\\studentsubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\models\\studentsubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\excal\u0131bur\\desktop\\opengui\\the-integrated-assignment-environment\\assignmentreportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|c:\\users\\ilayda\\desktop\\ce316\\ce-316-project\\the-integrated-assignment-environment\\assignmentreportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C90459D-68CC-4D97-97FA-EA19A3430FE6}|The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj|solutionrelative:the-integrated-assignment-environment\\assignmentreportwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -74,93 +86,124 @@
       "DocumentGroups": [
         {
           "DockedWidth": 345,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WelcomeWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
-              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
-              "RelativeToolTip": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T08:24:45.154Z",
+              "DocumentIndex": 0,
+              "Title": "ConfigurationForm.xaml",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\ConfigurationForm.xaml",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\ConfigurationForm.xaml",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\ConfigurationForm.xaml",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\ConfigurationForm.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-03T19:03:54.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CompilerService.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
-              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
-              "RelativeToolTip": "The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAQwDEAAAAlAAAAAAAAAA==",
+              "Title": "ConfigurationForm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\ConfigurationForm.xaml.cs",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\ConfigurationForm.xaml.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\ConfigurationForm.xaml.cs",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\ConfigurationForm.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:32:26.902Z",
+              "WhenOpened": "2025-05-03T19:01:50.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "AssignmentProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\AssignmentProcessor.cs",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Services\\AssignmentProcessor.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\AssignmentProcessor.cs",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\Services\\AssignmentProcessor.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T19:00:34.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WelcomeWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T08:24:45.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompilerService.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
+              "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
+              "RelativeToolTip": "The-Integrated-Assignment-Environment\\Services\\CompilerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T07:32:26.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Configuration.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Models\\Configuration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:31:56.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T07:31:56.843Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "RunService.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\RunService.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\RunService.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Services\\RunService.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\RunService.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\RunService.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Services\\RunService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:33:00.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T07:33:00.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Result.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Result.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Result.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Models\\Result.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Result.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Result.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Models\\Result.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:32:00.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T07:32:00.745Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "ConfigurationService.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Services\\ConfigurationService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAUwDoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:32:50.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T07:32:50.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "WelcomeWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\WelcomeWindow.xaml",
               "ViewState": "AgIAADkAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -168,11 +211,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "OpenAssignmentWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -180,11 +223,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "CreateAssignmentWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
               "ViewState": "AgIAAHsAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
@@ -192,24 +235,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "OpenAssignmentWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\OpenAssignmentWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T08:24:18.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T08:24:18.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "CreateAssignmentWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -217,11 +259,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ProjectDbHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Data\\ProjectDbHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -229,11 +271,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "The-Integrated-Assignment-Environment.csproj",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -241,11 +283,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Project.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Project.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Project.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Models\\Project.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\Project.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\Project.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Models\\Project.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -253,11 +295,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "StudentSubmission.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\Models\\StudentSubmission.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -265,11 +307,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "AssignmentReportWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
               "RelativeDocumentMoniker": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Excal\u0131bur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
               "RelativeToolTip": "The-Integrated-Assignment-Environment\\AssignmentReportWindow.xaml.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAiwCMAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
