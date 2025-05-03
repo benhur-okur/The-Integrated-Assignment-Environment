@@ -402,23 +402,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ecena\\.nuget\\packages\\": {},
+    "C:\\Users\\Excalıbur\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ecena\\OneDrive\\Masaüstü\\CE316 Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "projectUniqueName": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
       "projectName": "The-Integrated-Assignment-Environment",
-      "projectPath": "C:\\Users\\ecena\\OneDrive\\Masaüstü\\CE316 Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
-      "packagesPath": "C:\\Users\\ecena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ecena\\OneDrive\\Masaüstü\\CE316 Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\obj\\",
+      "projectPath": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "packagesPath": "C:\\Users\\Excalıbur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Excalıbur\\Desktop\\openGUI\\The-Integrated-Assignment-Environment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ecena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Excalıbur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

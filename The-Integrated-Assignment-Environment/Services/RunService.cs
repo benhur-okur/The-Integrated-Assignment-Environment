@@ -9,11 +9,26 @@ public class RunService
     public Result Run(StudentSubmission submission, Project project, Result result)
     {
         string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(submission.SourceFilePath);
-        string runTemplate = project.Configuration.RunCommand ?? "";
-        string arguments = project.RunArguments ?? "";
+        string fullCommand;
 
-        string command = runTemplate.Replace("{file}", fileNameWithoutExtension);
-        string fullCommand = $"{command} {arguments}";
+        switch (project.Configuration.LanguageName)
+        {
+            case "C":
+            case "C++":
+                fullCommand = $"{fileNameWithoutExtension}.exe {project.RunArguments}";
+                break;
+            case "Java":
+                fullCommand = $"java {fileNameWithoutExtension} {project.RunArguments}";
+                break;
+            case "Python":
+                fullCommand = $"python {fileNameWithoutExtension}.py {project.RunArguments}";
+                break;
+            case "Haskell":
+                fullCommand = $"{fileNameWithoutExtension}.exe {project.RunArguments}";
+                break;
+            default:
+                throw new NotSupportedException("Unsupported language");
+        }
 
         Console.WriteLine($"[Runner] Working Directory: {submission.ExtractedFolderPath}");
         Console.WriteLine($"[Runner] RunCommand: {fullCommand}");
@@ -40,10 +55,6 @@ public class RunService
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
             process.WaitForExit();
-
-            Console.WriteLine($"[Runner] ExitCode: {process.ExitCode}");
-            Console.WriteLine($"[Runner] STDOUT:\n{output}");
-            Console.WriteLine($"[Runner] STDERR:\n{error}");
 
             result.ExecutionSuccess = process.ExitCode == 0;
             result.Output = output;
