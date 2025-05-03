@@ -1,129 +1,109 @@
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Windows;
 using The_Integrated_Assignment_Environment.Models;
 using The_Integrated_Assignment_Environment.Services;
 
-namespace The_Integrated_Assignment_Environment;
-
-public partial class AssignmentReportWindow : Window
+namespace The_Integrated_Assignment_Environment
 {
-    private Project currentProject;
-    public ObservableCollection<Result> ResultList { get; set; } = new();
-    private ObservableCollection<Configuration> configurations;
-
-    public AssignmentReportWindow(Project project)
+    public partial class AssignmentReportWindow : Window
     {
-        InitializeComponent();
-        currentProject = project;
-        DataContext = this;
-        ResultsDataGrid.ItemsSource = ResultList;
+        private Project currentProject;
+        public ObservableCollection<Result> ResultList { get; set; } = new();
+        private ObservableCollection<Configuration> configurations;
 
-        txtAssignmentName.Text = currentProject.ProjectName;
-        txtConfigurationName.Text = currentProject.Configuration.LanguageName;
-        txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
-    }
-    
-    private void LoadConfigurations()
-    {
-        configurations = ConfigurationService.LoadAll();
-        //cmbConfiguration.ItemsSource = configurations;
-        //cmbConfiguration.DisplayMemberPath = "LanguageName";
-    }
-
-    private void btnSelectZipDirectory_Click(object sender, RoutedEventArgs e)
-    {
-        using var dialog = new System.Windows.Forms.FolderBrowserDialog();
-        if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        public AssignmentReportWindow(Project project)
         {
-            currentProject.SubmissionsFolderPath = dialog.SelectedPath;
+            InitializeComponent();
+            currentProject = project;
+            DataContext = this;
+            ResultsDataGrid.ItemsSource = ResultList;
+
+            txtAssignmentName.Text = currentProject.ProjectName;
+            txtConfigurationName.Text = currentProject.Configuration.LanguageName;
             txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
         }
-    }
 
-    private void btnProcessAssignments_Click(object sender, RoutedEventArgs e)
-    {
-        var compiler = new CompilerService();
-        var runner = new RunService();
-
-        string[] zipFiles = Directory.GetFiles(currentProject.SubmissionsFolderPath, "*.zip");
-
-        foreach (var zipFile in zipFiles)
+        private void LoadConfigurations()
         {
-            string studentId = Path.GetFileNameWithoutExtension(zipFile);
-            string extractPath = Path.Combine(currentProject.SubmissionsFolderPath, studentId);
+            configurations = ConfigurationService.LoadAll();
+        }
 
-            if (Directory.Exists(extractPath))
-                Directory.Delete(extractPath, true);
-
-            ZipFile.ExtractToDirectory(zipFile, extractPath);
-
-            var submission = new StudentSubmission
+        private void btnSelectZipDirectory_Click(object sender, RoutedEventArgs e)
+        {
+            using var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                StudentId = studentId,
-                ExtractedFolderPath = extractPath,
-                SourceFilePath = Path.Combine(extractPath, "main.c") // ileride dinamik yapılabilir
-            };
+                currentProject.SubmissionsFolderPath = dialog.SelectedPath;
+                txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
+            }
+        }
 
-            currentProject.Submissions.Add(submission);
-
-            var result = compiler.Compile(submission, currentProject.Configuration);
-
-            if (result.CompilationSuccess)
+        private void btnProcessAssignments_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(currentProject.SubmissionsFolderPath))
             {
-                // 🔁 Eskiden sadece config gönderiliyordu:
-                // result = runner.Run(submission, currentProject.Configuration);
-
-                // ✅ Şimdi tüm project nesnesi gönderiliyor:
-                result = runner.Run(submission, currentProject);
+                System.Windows.MessageBox.Show("Please select a submissions folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
-            currentProject.Results.Add(result);
-            ResultList.Add(result);
+            ResultList.Clear();                     // 👈 UI listesini temizle
+            currentProject.Results.Clear();         // 👈 Proje içindeki eski sonuçları temizle
+            currentProject.Submissions.Clear();     // 👈 Aynı şekilde submissions da temizlenmeli
+
+            var processor = new AssignmentProcessor();
+            var results = processor.ProcessAll(currentProject); // tüm zipleri işler
+
+            foreach (var r in results)
+                ResultList.Add(r); // UI'da görünür hale getir
+
+            System.Windows.MessageBox.Show("Tüm ödevler işlendi!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        System.Windows.MessageBox.Show("Tüm ödevler işlendi!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
-    }
-
-    private void btnSaveProject_Click(object sender, RoutedEventArgs e)
-    {
-        var dialog = new Microsoft.Win32.SaveFileDialog { Filter = "Project Files (*.json)|*.json" };
-        if (dialog.ShowDialog() == true)
+        private void btnSaveProject_Click(object sender, RoutedEventArgs e)
         {
-            string json = System.Text.Json.JsonSerializer.Serialize(currentProject, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(dialog.FileName, json);
-            System.Windows.MessageBox.Show("Proje kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            var dialog = new Microsoft.Win32.SaveFileDialog { Filter = "Project Files (*.json)|*.json" };
+            if (dialog.ShowDialog() == true)
+            {
+                string json = System.Text.Json.JsonSerializer.Serialize(currentProject, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(dialog.FileName, json);
+                System.Windows.MessageBox.Show("Proje kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
-    }
 
-    private void btnLoadProject_Click(object sender, RoutedEventArgs e)
-    {
-        var dialog = new Microsoft.Win32.OpenFileDialog { Filter = "Project Files (*.json)|*.json" };
-        if (dialog.ShowDialog() == true)
+        private void btnLoadProject_Click(object sender, RoutedEventArgs e)
         {
-            string json = File.ReadAllText(dialog.FileName);
-            currentProject = System.Text.Json.JsonSerializer.Deserialize<Project>(json);
-            ResultList.Clear();
-            foreach (var r in currentProject.Results)
-                ResultList.Add(r);
-            System.Windows.MessageBox.Show("Proje yüklendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-    }
-    
-    private void btnBack_Click(object sender, RoutedEventArgs e)
-    {
-        var createAssignmentWindow = new CreateAssignmentWindow();
-        createAssignmentWindow.Show();
-        this.Close();
-    }
-    private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
-    {
-        var configWindow = new ConfigurationWindow();
-        configWindow.ShowDialog();
+            var dialog = new Microsoft.Win32.OpenFileDialog { Filter = "Project Files (*.json)|*.json" };
+            if (dialog.ShowDialog() == true)
+            {
+                string json = File.ReadAllText(dialog.FileName);
+                currentProject = System.Text.Json.JsonSerializer.Deserialize<Project>(json);
 
-        // Config penceresi kapandıktan sonra yeniden yükle
-        LoadConfigurations();
+                ResultList.Clear();
+                foreach (var r in currentProject.Results)
+                    ResultList.Add(r);
+
+                txtAssignmentName.Text = currentProject.ProjectName;
+                txtConfigurationName.Text = currentProject.Configuration.LanguageName;
+                txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
+
+                System.Windows.MessageBox.Show("Proje yüklendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var createAssignmentWindow = new CreateAssignmentWindow();
+            createAssignmentWindow.Show();
+            this.Close();
+        }
+
+        private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
+        {
+            var configWindow = new ConfigurationWindow();
+            configWindow.ShowDialog();
+            LoadConfigurations(); // config listesi güncellenirse hazır olsun
+        }
     }
 }

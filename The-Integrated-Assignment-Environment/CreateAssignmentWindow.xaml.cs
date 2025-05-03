@@ -79,8 +79,8 @@ public partial class CreateAssignmentWindow : Window
         var config = new Configuration
         {
             LanguageName = selectedConfig.LanguageName,
-            CompilerPath = selectedConfig.CompilerPath,
-            CompileArguments = selectedConfig.CompileArguments
+            CompileCommand = selectedConfig.CompileCommand,
+            RunCommand = selectedConfig.RunCommand
         };
 
         var project = new Project
