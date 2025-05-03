@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using The_Integrated_Assignment_Environment.Models;
 using The_Integrated_Assignment_Environment.Services;
+using The_Integrated_Assignment_Environment.Data;
 
 
 namespace The_Integrated_Assignment_Environment;
@@ -94,7 +95,8 @@ public partial class CreateAssignmentWindow : Window
         };
 
         Console.WriteLine($"Assignment: {project.ProjectName}, Folder: {project.SubmissionsFolderPath}, Language: {project.Configuration.LanguageName}");
-
+        var db = new ProjectDbHandler();
+        db.InsertProject(project);
         System.Windows.MessageBox.Show("Assignment saved!");
 
         var reportWindow = new AssignmentReportWindow(project);
@@ -116,5 +118,12 @@ public partial class CreateAssignmentWindow : Window
         // Config penceresi kapandıktan sonra yeniden yükle
         LoadConfigurations();
     }
+    private void btnOpenAssignment_Click(object sender, RoutedEventArgs e)
+    {
+        var openAssignmentWindow = new OpenAssignmentWindow();
+        openAssignmentWindow.Show();
+        this.Close();
+    }
+
 
 }

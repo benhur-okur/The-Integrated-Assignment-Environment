@@ -27,9 +27,12 @@ public partial class WelcomeWindow : Window
 
     private void btnOpenAssignment_Click(object sender, RoutedEventArgs e)
     {
-        // TODO: "Open Assignment" ekranını açma logic’i
+        var window = new OpenAssignmentWindow();
+        window.Show();
+        this.Close();
     }
-        
+
+
     private void MenuHelp_Click(object sender, RoutedEventArgs e)
     {
         // TODO: Yardım içeriğini göster
