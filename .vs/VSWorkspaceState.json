@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\The-Integrated-Assignment-Environment",
+    "\\The-Integrated-Assignment-Environment\\bin\\Debug",
+    "\\The-Integrated-Assignment-Environment\\bin\\Release",
+    "\\The-Integrated-Assignment-Environment\\Data",
+    "\\The-Integrated-Assignment-Environment\\Managers",
+    "\\The-Integrated-Assignment-Environment\\Models",
+    "\\The-Integrated-Assignment-Environment\\obj",
+    "\\The-Integrated-Assignment-Environment\\Resources",
+    "\\The-Integrated-Assignment-Environment\\Services"
   ],
-<<<<<<< Updated upstream
-=======
-  "SelectedNode": "\\The-Integrated-Assignment-Environment.sln",
->>>>>>> Stashed changes
+  "SelectedNode": "\\The-Integrated-Assignment-Environment\\CreateAssignmentWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

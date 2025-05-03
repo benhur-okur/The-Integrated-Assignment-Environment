@@ -53,7 +53,7 @@ namespace The_Integrated_Assignment_Environment {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/The-Integrated-Assignment-Environment;V1.0.0.0;component/welcomewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/The-Integrated-Assignment-Environment;component/welcomewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\WelcomeWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
