@@ -8,6 +8,8 @@
         Icon="Resources/logo.png">
 
     <Window.Resources>
+
+        <!-- Sidebar Button -->
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -35,6 +37,8 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Soft TextBox -->
         <Style TargetType="TextBox" x:Key="SoftTextBoxStyle">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
@@ -56,77 +60,112 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
 
-        
-    <Style TargetType="Button" x:Key="SoftButtonStyle">
-        <Setter Property="Background" Value="#2C3E50"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Height" Value="35"/>
-        <Setter Property="BorderBrush" Value="#2C3E50"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="6"> 
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="GraySoftButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#dddddd"/> 
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Height" Value="35"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="10,0"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="6">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#c0c0c0"/> 
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+        <!-- Soft Button -->
+        <Style TargetType="Button" x:Key="SoftButtonStyle">
+            <Setter Property="Background" Value="#2C3E50"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="BorderBrush" Value="#2C3E50"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6"> 
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-
+        <!-- Gray Soft Button -->
+        <Style x:Key="GraySoftButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#dddddd"/> 
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#c0c0c0"/> 
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Window.Resources>
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>    <!-- İçerik -->
+            <RowDefinition Height="Auto"/> <!-- Alt butonlar -->
         </Grid.RowDefinitions>
-
-        <TextBlock Text="Configurations" FontSize="24" FontWeight="Bold" Foreground="#2C3E50"/>
-
-        <!-- Ortak alan: ya DataGrid ya ConfigurationForm gösterilecek -->
+        
+        <Grid Grid.Row="0">
+            <!-- Sağ üst butonlar -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Grid.Column="1"
+                        Margin="0,0,0,10">
+                <Button Content="Import" Width="100" Margin="5,0,0,0"
+                        Click="btnImport_Click"
+                        Style="{StaticResource SoftButtonStyle}" />
+                <Button Content="Export" Width="100" Margin="5,0,0,0"
+                        Click="btnExport_Click"
+                        Style="{StaticResource SoftButtonStyle}" />
+            </StackPanel>
+        </Grid>
+            
+            <!-- ÜST: Config Başlığı + Sağ üst köşe butonlar -->
         <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Ortalanmış başlık -->
+            <TextBlock Text="Configurations"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="#2C3E50"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Grid.Column="0"
+                       Margin="0,0,0,10"/>
+            
+        </Grid>
+
+        <!-- İÇERİK: DataGrid + Form -->
+        <Grid Grid.Row="2">
             <DataGrid x:Name="dgConfigurations"
+                      SelectionMode="Extended"
+                      SelectionUnit="FullRow"
                       AutoGenerateColumns="False"
                       HeadersVisibility="Column"
                       CanUserAddRows="False"
@@ -144,12 +183,16 @@
             <ContentControl x:Name="configFormContainer" Visibility="Collapsed"/>
         </Grid>
 
-        <StackPanel x:Name="buttonPanel" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-            <Button Content="Add New" Width="120" Margin="5" Click="btnAdd_Click" Style="{StaticResource SoftButtonStyle}"/>
-            <Button Content="Edit" Width="120" Margin="5" Click="btnEdit_Click" Style="{StaticResource GraySoftButtonStyle}"/>
-            <Button Content="Delete" Width="120" Margin="5" Click="btnDelete_Click" Style="{StaticResource GraySoftButtonStyle}"/>
-            <Button Content="Close" Width="120" Margin="5" Click="btnClose_Click" Style="{StaticResource GraySoftButtonStyle}"/>
+        <!-- ALT: Buton Panel -->
+        <StackPanel x:Name="buttonPanel"
+                    Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            <Button Content="Add New" Width="120" Margin="5" Click="btnAdd_Click" Style="{StaticResource SoftButtonStyle}" />
+            <Button Content="Edit" Width="120" Margin="5" Click="btnEdit_Click" Style="{StaticResource GraySoftButtonStyle}" />
+            <Button Content="Delete" Width="120" Margin="5" Click="btnDelete_Click" Style="{StaticResource GraySoftButtonStyle}" />
+            <Button Content="Close" Width="120" Margin="5" Click="btnClose_Click" Style="{StaticResource GraySoftButtonStyle}" />
         </StackPanel>
-
     </Grid>
 </Window>

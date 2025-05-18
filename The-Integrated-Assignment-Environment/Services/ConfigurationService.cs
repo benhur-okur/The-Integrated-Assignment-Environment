@@ -2,6 +2,8 @@ using System.Collections.ObjectModel;
 using System.Data.SQLite;
 using System.Windows;
 using The_Integrated_Assignment_Environment.Models;
+using System.Text.Json;
+using System.IO;
 
 namespace The_Integrated_Assignment_Environment.Services
 {
@@ -89,6 +91,36 @@ namespace The_Integrated_Assignment_Environment.Services
             var cmd = new SQLiteCommand("DELETE FROM Configurations WHERE Language = @lang", conn);
             cmd.Parameters.AddWithValue("@lang", config.LanguageName);
             cmd.ExecuteNonQuery();
+        }
+        
+        //Import & Export Config
+        public static void ExportToFile(string filePath, ObservableCollection<Configuration> configs)
+        {
+            var json = JsonSerializer.Serialize(configs);
+            File.WriteAllText(filePath, json);
+        }
+
+        public static ObservableCollection<Configuration> ImportFromFile(string filePath)
+        {
+            var json = File.ReadAllText(filePath);
+            var importedConfigs = JsonSerializer.Deserialize<ObservableCollection<Configuration>>(json);
+
+            using var conn = new SQLiteConnection($"Data Source={dbPath};Version=3;");
+            conn.Open();
+
+            foreach (var config in importedConfigs)
+            {
+                var cmd = new SQLiteCommand(
+                    @"INSERT OR REPLACE INTO Configurations (Language, CompileCommand, RunCommand)
+              VALUES (@lang, @compile, @run)", conn);
+
+                cmd.Parameters.AddWithValue("@lang", config.LanguageName);
+                cmd.Parameters.AddWithValue("@compile", config.CompileCommand);
+                cmd.Parameters.AddWithValue("@run", config.RunCommand);
+                cmd.ExecuteNonQuery();
+            }
+
+            return LoadAll(); // return updated list
         }
     }
 }

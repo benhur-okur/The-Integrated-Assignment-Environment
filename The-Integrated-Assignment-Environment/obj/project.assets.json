@@ -402,31 +402,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ILAYDA\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\efese\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "projectUniqueName": "C:\\Users\\efese\\RiderProjects\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
       "projectName": "The-Integrated-Assignment-Environment",
-      "projectPath": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
-      "packagesPath": "C:\\Users\\ILAYDA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ILAYDA\\Desktop\\CE316\\CE-316-Project\\The-Integrated-Assignment-Environment\\obj\\",
+      "projectPath": "C:\\Users\\efese\\RiderProjects\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment.csproj",
+      "packagesPath": "C:\\Users\\efese\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\efese\\RiderProjects\\The-Integrated-Assignment-Environment\\The-Integrated-Assignment-Environment\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ILAYDA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\efese\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -479,7 +472,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\efese\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
