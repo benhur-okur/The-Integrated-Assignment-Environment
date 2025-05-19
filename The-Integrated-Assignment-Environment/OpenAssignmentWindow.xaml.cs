@@ -1,17 +1,17 @@
-using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.Text.Json;
 using System.Windows;
+using The_Integrated_Assignment_Environment.Data;
 using The_Integrated_Assignment_Environment.Models;
-using The_Integrated_Assignment_Environment.Data; // Eðer ProjectDbHandler burada ise
-// veya Service klasöründeyse ona göre namespace'i ayarla
+using The_Integrated_Assignment_Environment.Services;
+using ProjectDbHandler = The_Integrated_Assignment_Environment.Services.ProjectDbHandler;
+
 
 namespace The_Integrated_Assignment_Environment
 {
     public partial class OpenAssignmentWindow : Window
     {
-        private ProjectDbHandler _dbHandler = new ProjectDbHandler();
+        private ProjectDbHandler _dbHandler = new();
         private List<Project> _projects;
 
         public OpenAssignmentWindow()
@@ -23,26 +23,36 @@ namespace The_Integrated_Assignment_Environment
         private void LoadProjects()
         {
             _projects = _dbHandler.LoadAll();
-            cmbProjects.ItemsSource = _projects;
+            lstProjects.ItemsSource = _projects;
         }
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            var selectedProject = cmbProjects.SelectedItem as Project;
-
-            if (selectedProject == null)
+            if (lstProjects.SelectedItem is not Project selectedProject)
             {
-                System.Windows.MessageBox.Show("Please select a project.");
-
+                System.Windows.MessageBox.Show("Please select a project to open.");
                 return;
             }
 
-            // Projeyi aç – örnek olarak rapor ekranýna git
-            var reportWindow = new AssignmentReportWindow(selectedProject);
+            var db = new ProjectDbHandler();
+            selectedProject.Results = db.LoadResultsForProject(selectedProject.ProjectName); 
+
+            var reportWindow = new AssignmentReportWindow(selectedProject, openedFromCreate: false, autoProcess: false, suppressSuccessDialog: true);
             reportWindow.Show();
+            Close();
+        }
+
+
+        private void lstProjects_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            btnOpen_Click(sender, e);
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var welcomeWindow = new WelcomeWindow();
+            welcomeWindow.Show();
             this.Close();
         }
-       
-
     }
 }

@@ -1,129 +1,132 @@
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
+using The_Integrated_Assignment_Environment.Data;
 using The_Integrated_Assignment_Environment.Models;
 using The_Integrated_Assignment_Environment.Services;
-using The_Integrated_Assignment_Environment.Data;
+using ProjectDbHandler = The_Integrated_Assignment_Environment.Services.ProjectDbHandler;
 
-
-namespace The_Integrated_Assignment_Environment;
-
-public partial class CreateAssignmentWindow : Window
-
+namespace The_Integrated_Assignment_Environment
 {
-    private string selectedFolderPath = "";
-    private string expectedOutputFilePath = "";
-    private ObservableCollection<Configuration> configurations;
-    public CreateAssignmentWindow()
+    public partial class CreateAssignmentWindow : Window
     {
-        InitializeComponent();
-        LoadConfigurations();
-    }
-    
-    private void LoadConfigurations()
-    {
-        configurations = ConfigurationService.LoadAll();
-        cmbConfiguration.ItemsSource = configurations;
-        cmbConfiguration.DisplayMemberPath = "LanguageName";
-    }
+        private string selectedFolderPath = "";
+        private string expectedOutputFilePath = "";
+        private ObservableCollection<Configuration> configurations;
 
-    private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
-    {
-        using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+        public CreateAssignmentWindow()
         {
-            var result = dialog.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
+            InitializeComponent();
+            LoadConfigurations();
+        }
+
+        private void LoadConfigurations()
+        {
+            configurations = ConfigurationService.LoadAll();
+            cmbConfiguration.ItemsSource = configurations;
+            cmbConfiguration.DisplayMemberPath = "LanguageName";
+        }
+
+        public void LoadProject(Project project)
+        {
+            txtAssignmentName.Text = project.ProjectName;
+            cmbConfiguration.SelectedItem = configurations.FirstOrDefault(c =>
+                c.LanguageName == project.Configuration.LanguageName &&
+                c.CompileCommand == project.Configuration.CompileCommand &&
+                c.RunCommand == project.Configuration.RunCommand);
+
+            selectedFolderPath = project.SubmissionsFolderPath;
+            lblSelectedFolderPath.Content = selectedFolderPath;
+
+            expectedOutputFilePath = project.ExpectedOutputFilePath;
+            lblExpectedOutputPath.Content = expectedOutputFilePath;
+
+            txtArguments.Text = project.RunArguments;
+        }
+
+        private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
+        {
+            using var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 selectedFolderPath = dialog.SelectedPath;
                 lblSelectedFolderPath.Content = selectedFolderPath;
             }
         }
-    }
 
-
-    private void btnSelectExpectedOutput_Click(object sender, RoutedEventArgs e)
-    {
-        var dialog = new Microsoft.Win32.OpenFileDialog
+        private void btnSelectExpectedOutput_Click(object sender, RoutedEventArgs e)
         {
-            Title = "Select Expected Output File",
-            Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-        };
+            var dialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Title = "Select Expected Output File",
+                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
+            };
 
-        if (dialog.ShowDialog() == true)
-        {
-            lblExpectedOutputPath.Content = dialog.FileName;
-            expectedOutputFilePath = dialog.FileName; // expectedOutputFilePath diye bir alan tanımlamalısın
-        }
-    }
-
-
-    private void btnSaveAssignment_Click(object sender, RoutedEventArgs e)
-    {
-        var projectName = txtAssignmentName.Text;
-        var selectedConfig = cmbConfiguration.SelectedItem as Configuration;
-        var arguments = txtArguments.Text;
-
-        if (string.IsNullOrWhiteSpace(projectName) || string.IsNullOrWhiteSpace(selectedFolderPath))
-        {
-            System.Windows.MessageBox.Show("Assignment name and submission folder are required.");
-            return;
+            if (dialog.ShowDialog() == true)
+            {
+                expectedOutputFilePath = dialog.FileName;
+                lblExpectedOutputPath.Content = expectedOutputFilePath;
+            }
         }
 
-        if (selectedConfig == null)
+        private void btnSaveAssignment_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.MessageBox.Show("Please select a configuration.");
-            return;
+            var projectName = txtAssignmentName.Text;
+            var selectedConfig = cmbConfiguration.SelectedItem as Configuration;
+            var arguments = txtArguments.Text;
+
+            if (string.IsNullOrWhiteSpace(projectName) || string.IsNullOrWhiteSpace(selectedFolderPath))
+            {
+                System.Windows.MessageBox.Show("Assignment name and submission folder are required.");
+                return;
+            }
+
+            if (selectedConfig == null)
+            {
+                System.Windows.MessageBox.Show("Please select a configuration.");
+                return;
+            }
+
+            var project = new Project
+            {
+                ProjectName = projectName,
+                Configuration = new Configuration
+                {
+                    LanguageName = selectedConfig.LanguageName,
+                    CompileCommand = selectedConfig.CompileCommand,
+                    RunCommand = selectedConfig.RunCommand
+                },
+                SubmissionsFolderPath = selectedFolderPath,
+                RunArguments = arguments,
+                ExpectedOutputFilePath = expectedOutputFilePath,
+                Submissions = new(),
+                Results = new()
+            };
+
+            new ProjectDbHandler().InsertProject(project);
+            System.Windows.MessageBox.Show("Assignment saved!");
+
+            var reportWindow = new AssignmentReportWindow(project, openedFromCreate: true);
+            reportWindow.Show();
+            this.Close();
         }
 
-        // Yeni bir Configuration nesnesi oluşturmak yerine mevcut olanı doğrudan kullanıyoruz
-        var config = new Configuration
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            LanguageName = selectedConfig.LanguageName,
-            CompileCommand = selectedConfig.CompileCommand,
-            RunCommand = selectedConfig.RunCommand
-        };
+            new WelcomeWindow().Show();
+            this.Close();
+        }
 
-        var project = new Project
+        private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
         {
-            ProjectName = projectName,
-            Configuration = config,
-            SubmissionsFolderPath = selectedFolderPath,
-            RunArguments = arguments,
-            ExpectedOutputFilePath = expectedOutputFilePath,
-            Submissions = new List<StudentSubmission>(),
-            Results = new List<Result>()
-        };
+            new ConfigurationWindow().ShowDialog();
+            LoadConfigurations();
+        }
 
-        Console.WriteLine($"Assignment: {project.ProjectName}, Folder: {project.SubmissionsFolderPath}, Language: {project.Configuration.LanguageName}");
-        var db = new ProjectDbHandler();
-        db.InsertProject(project);
-        System.Windows.MessageBox.Show("Assignment saved!");
-
-        var reportWindow = new AssignmentReportWindow(project);
-        reportWindow.Show();
-        this.Close();
+        private void btnOpenAssignment_Click(object sender, RoutedEventArgs e)
+        {
+            new OpenAssignmentWindow().Show();
+            this.Close();
+        }
     }
-
-    private void btnBack_Click(object sender, RoutedEventArgs e)
-    {
-        WelcomeWindow welcome = new WelcomeWindow();
-        welcome.Show();
-        this.Close();
-    }
-    private void btnNewConfiguration_Click(object sender, RoutedEventArgs e)
-    {
-        var configWindow = new ConfigurationWindow();
-        configWindow.ShowDialog();
-
-        // Config penceresi kapandıktan sonra yeniden yükle
-        LoadConfigurations();
-    }
-    private void btnOpenAssignment_Click(object sender, RoutedEventArgs e)
-    {
-        var openAssignmentWindow = new OpenAssignmentWindow();
-        openAssignmentWindow.Show();
-        this.Close();
-    }
-
-
 }

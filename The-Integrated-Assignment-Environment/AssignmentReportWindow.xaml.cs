@@ -1,9 +1,10 @@
 using System.Collections.ObjectModel;
 using System.IO;
-using System.IO.Compression;
 using System.Windows;
+using The_Integrated_Assignment_Environment.Data;
 using The_Integrated_Assignment_Environment.Models;
 using The_Integrated_Assignment_Environment.Services;
+using ProjectDbHandler = The_Integrated_Assignment_Environment.Services.ProjectDbHandler;
 
 namespace The_Integrated_Assignment_Environment
 {
@@ -13,16 +14,76 @@ namespace The_Integrated_Assignment_Environment
         public ObservableCollection<Result> ResultList { get; set; } = new();
         private ObservableCollection<Configuration> configurations;
 
-        public AssignmentReportWindow(Project project)
+        private Project originalProject;
+        private bool openedFromCreate;
+        private bool suppressSuccessDialog;
+
+        public AssignmentReportWindow(Project project, bool openedFromCreate = false, bool autoProcess = false, bool suppressSuccessDialog = false)
         {
             InitializeComponent();
             currentProject = project;
+            this.openedFromCreate = openedFromCreate;
+            this.suppressSuccessDialog = suppressSuccessDialog;
+            originalProject = project;
+
             DataContext = this;
             ResultsDataGrid.ItemsSource = ResultList;
 
             txtAssignmentName.Text = currentProject.ProjectName;
             txtConfigurationName.Text = currentProject.Configuration.LanguageName;
             txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
+            txtExpectedOutputPath.Text = currentProject.ExpectedOutputFilePath;
+
+            // Eğer veritabanından sonuçlar geldiyse ekrana yansıt
+            foreach (var result in currentProject.Results)
+                ResultList.Add(result);
+
+            // Process otomatik çalışsın mı?
+            if (autoProcess)
+            {
+                btnProcessAssignments.Visibility = Visibility.Collapsed;
+                AutoProcessAssignmentsSafely();
+            }
+
+            // Eğer kayıtlı sonuç varsa save butonunu gösterme
+            btnSaveResults.Visibility = Visibility.Collapsed;
+        }
+
+        private void AutoProcessAssignmentsSafely()
+        {
+            if (!Directory.Exists(currentProject.SubmissionsFolderPath))
+            {
+                System.Windows.MessageBox.Show("Submissions folder bulunamadı. Lütfen geçerli bir klasör seçin.", "Klasör Hatası", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!File.Exists(currentProject.ExpectedOutputFilePath))
+            {
+                System.Windows.MessageBox.Show("Expected output dosyası bulunamadı. Lütfen geçerli bir dosya seçin.", "Dosya Hatası", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            ProcessAssignmentsAndDisplayResults();
+        }
+
+        private void ProcessAssignmentsAndDisplayResults()
+        {
+            ResultList.Clear();
+            currentProject.Results.Clear();
+            currentProject.Submissions.Clear();
+
+            var processor = new AssignmentProcessor();
+            var results = processor.ProcessAll(currentProject);
+
+            foreach (var r in results)
+                ResultList.Add(r);
+
+            if (!suppressSuccessDialog)
+            {
+                System.Windows.MessageBox.Show("Tüm ödevler işlendi!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            btnSaveResults.Visibility = Visibility.Visible;
         }
 
         private void LoadConfigurations()
@@ -35,6 +96,7 @@ namespace The_Integrated_Assignment_Environment
             using var dialog = new System.Windows.Forms.FolderBrowserDialog();
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
+                btnProcessAssignments.Visibility = Visibility.Visible;
                 currentProject.SubmissionsFolderPath = dialog.SelectedPath;
                 txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
             }
@@ -48,54 +110,36 @@ namespace The_Integrated_Assignment_Environment
                 return;
             }
 
-            ResultList.Clear();                     // 👈 UI listesini temizle
-            currentProject.Results.Clear();         // 👈 Proje içindeki eski sonuçları temizle
-            currentProject.Submissions.Clear();     // 👈 Aynı şekilde submissions da temizlenmeli
-
-            var processor = new AssignmentProcessor();
-            var results = processor.ProcessAll(currentProject); // tüm zipleri işler
-
-            foreach (var r in results)
-                ResultList.Add(r); // UI'da görünür hale getir
-
-            System.Windows.MessageBox.Show("Tüm ödevler işlendi!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            ProcessAssignmentsAndDisplayResults();
         }
 
-        private void btnSaveProject_Click(object sender, RoutedEventArgs e)
+        private void btnSaveResults_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new Microsoft.Win32.SaveFileDialog { Filter = "Project Files (*.json)|*.json" };
-            if (dialog.ShowDialog() == true)
-            {
-                string json = System.Text.Json.JsonSerializer.Serialize(currentProject, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(dialog.FileName, json);
-                System.Windows.MessageBox.Show("Proje kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
-        private void btnLoadProject_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new Microsoft.Win32.OpenFileDialog { Filter = "Project Files (*.json)|*.json" };
-            if (dialog.ShowDialog() == true)
-            {
-                string json = File.ReadAllText(dialog.FileName);
-                currentProject = System.Text.Json.JsonSerializer.Deserialize<Project>(json);
-
-                ResultList.Clear();
-                foreach (var r in currentProject.Results)
-                    ResultList.Add(r);
-
-                txtAssignmentName.Text = currentProject.ProjectName;
-                txtConfigurationName.Text = currentProject.Configuration.LanguageName;
-                txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
-
-                System.Windows.MessageBox.Show("Proje yüklendi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            var db = new ProjectDbHandler();
+            db.UpdateProjectResults(currentProject);
+            System.Windows.MessageBox.Show("Sonuçlar başarıyla kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            var createAssignmentWindow = new CreateAssignmentWindow();
-            createAssignmentWindow.Show();
+            if (openedFromCreate)
+            {
+                var createWindow = new CreateAssignmentWindow();
+                createWindow.Show();
+                createWindow.LoadProject(originalProject);
+                this.Close();
+            }
+            else
+            {
+                var welcomeWindow = new WelcomeWindow();
+                welcomeWindow.Show();
+                this.Close();
+            }
+        }
+        
+        private void btnOpenAssignment_Click(object sender, RoutedEventArgs e)
+        {
+            new OpenAssignmentWindow().Show();
             this.Close();
         }
 
@@ -103,7 +147,8 @@ namespace The_Integrated_Assignment_Environment
         {
             var configWindow = new ConfigurationWindow();
             configWindow.ShowDialog();
-            LoadConfigurations(); // config listesi güncellenirse hazır olsun
+            LoadConfigurations();
         }
+        
     }
 }

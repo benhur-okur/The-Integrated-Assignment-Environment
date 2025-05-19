@@ -5,7 +5,7 @@ using The_Integrated_Assignment_Environment.Data;
 
 namespace The_Integrated_Assignment_Environment.Data
 {
-    public class ProjectDbHandler
+    public partial class ProjectDbHandler
     {
         private const string ConnectionString = "Data Source=assignment.db";
 

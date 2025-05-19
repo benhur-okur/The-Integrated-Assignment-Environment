@@ -29,8 +29,6 @@
             <Button Content="Configurations" Style="{StaticResource SidebarButtonStyle}" Click="btnNewConfiguration_Click"/>
             <Separator Margin="10"/>
 			<Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" Click="btnOpenAssignment_Click"/>
-
-			<Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}" />
             <Separator Margin="10"/>
             <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" />
         </StackPanel>

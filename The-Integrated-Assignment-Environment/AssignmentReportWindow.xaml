@@ -113,7 +113,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
             <ColumnDefinition Width="*"/>
@@ -130,11 +130,10 @@
                     ToolTip="Go Back">
                 <Image Source="Resources/back.png"/>
             </Button>
-            
+
             <Button Content="Configurations" Style="{StaticResource SidebarButtonStyle}" Click="btnNewConfiguration_Click"/>
             <Separator Margin="10"/>
-            <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" />
-            <Button Content="Manage Assignments" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" Click="btnOpenAssignment_Click" />
             <Separator Margin="10"/>
             <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" />
         </StackPanel>
@@ -154,9 +153,15 @@
                     <TextBox x:Name="txtConfigurationName" Width="400" IsReadOnly="True" Style="{StaticResource SoftTextBoxStyle}"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                     <TextBlock Text="Submissions Path:" FontSize="14" Width="120" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtSubmissionFolder" Width="400" IsReadOnly="True" Style="{StaticResource SoftTextBoxStyle}"/>
+                </StackPanel>
+
+                
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                    <TextBlock Text="Output File:" FontSize="14" Width="120" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtExpectedOutputPath" Width="400" IsReadOnly="True" Style="{StaticResource SoftTextBoxStyle}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
@@ -169,7 +174,8 @@
                             Style="{StaticResource GraySoftButtonStyle}"
                             Margin="10,0,0,0"
                             Click="btnSelectZipDirectory_Click"/>
-                    <Button Content="Process Assignments"
+                    <Button x:Name="btnProcessAssignments"
+                            Content="Process Assignments"
                             Width="180" Height="35"
                             Style="{StaticResource SoftButtonStyle}"
                             Margin="30,0,0,0"
@@ -191,6 +197,13 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Border>
+                <Button x:Name="btnSaveResults"
+                        Content="Save Results"
+                        Width="180" Height="35"
+                        Style="{StaticResource SoftButtonStyle}"
+                        Margin="20,20,20,20"
+                        Click="btnSaveResults_Click"
+                        Visibility="Collapsed"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
