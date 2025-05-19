@@ -79,7 +79,7 @@
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0" VerticalAlignment="Stretch">
             <Button Content="OK" Width="100" Margin="5" Style="{StaticResource PrimaryButton}" Click="btnOK_Click"/>
-            <Button Content="Cancel" Width="100" Margin="5" Click="btnCancel_Click"/>
+            <Button Content="Cancel" Width="100" Margin="5" Click="btnCancel_Click" Style="{StaticResource GraySoftButtonStyle}"/>
         </StackPanel>
     </Grid>
 </UserControl>

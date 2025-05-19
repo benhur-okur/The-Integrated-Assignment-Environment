@@ -128,5 +128,14 @@ namespace The_Integrated_Assignment_Environment
             new OpenAssignmentWindow().Show();
             this.Close();
         }
+        
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var helpWindow = new HelpWindow();
+            helpWindow.Owner = this; 
+            helpWindow.ShowDialog(); 
+        }
+
     }
+    
 }

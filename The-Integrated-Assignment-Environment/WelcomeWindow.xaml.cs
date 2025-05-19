@@ -35,13 +35,20 @@ public partial class WelcomeWindow : Window
 
     private void MenuHelp_Click(object sender, RoutedEventArgs e)
     {
-        // TODO: Yardım içeriğini göster
+        var helpWindow = new HelpWindow();
+        helpWindow.Owner = this;
+        helpWindow.ShowDialog();
     }
+
+
 
     private void MenuAbout_Click(object sender, RoutedEventArgs e)
     {
-        // TODO: Hakkında penceresini aç
+        var aboutWindow = new AboutWindow();
+        aboutWindow.Owner = this;
+        aboutWindow.ShowDialog();
     }
+
 
     
 }

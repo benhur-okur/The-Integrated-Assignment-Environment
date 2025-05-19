@@ -30,7 +30,7 @@
             <Separator Margin="10"/>
 			<Button Content="Open Assignment" Style="{StaticResource SidebarButtonStyle}" Click="btnOpenAssignment_Click"/>
             <Separator Margin="10"/>
-            <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" />
+            <Button Content="Help" Style="{StaticResource SidebarButtonStyle}" Click="btnHelp_Click"/>
         </StackPanel>
         
         <ScrollViewer Grid.Column="1" Margin="30">

@@ -9,7 +9,7 @@
 
     <Window.Resources>
 
-        <!-- Sidebar Button -->
+    
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -38,7 +38,7 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Soft TextBox -->
+        
         <Style TargetType="TextBox" x:Key="SoftTextBoxStyle">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
@@ -61,7 +61,7 @@
             </Setter>
         </Style>
 
-        <!-- Soft Button -->
+      
         <Style TargetType="Button" x:Key="SoftButtonStyle">
             <Setter Property="Background" Value="#2C3E50"/>
             <Setter Property="Foreground" Value="White"/>
@@ -84,7 +84,7 @@
             </Setter>
         </Style>
 
-        <!-- Gray Soft Button -->
+       
         <Style x:Key="GraySoftButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#dddddd"/> 
             <Setter Property="Foreground" Value="Black"/>
@@ -127,22 +127,22 @@
         </Grid.RowDefinitions>
         
         <Grid Grid.Row="0">
-            <!-- Sağ üst butonlar -->
+            
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Grid.Column="1"
                         Margin="0,0,0,10">
-                <Button Content="Import" Width="100" Margin="5,0,0,0"
+                <Button x:Name="btnImport" Content="Import" Width="100" Margin="5,0,0,0"
                         Click="btnImport_Click"
                         Style="{StaticResource SoftButtonStyle}" />
-                <Button Content="Export" Width="100" Margin="5,0,0,0"
+                <Button x:Name="btnExport" Content="Export" Width="100" Margin="5,0,0,0"
                         Click="btnExport_Click"
                         Style="{StaticResource SoftButtonStyle}" />
             </StackPanel>
         </Grid>
             
-            <!-- ÜST: Config Başlığı + Sağ üst köşe butonlar -->
+            
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -161,7 +161,7 @@
             
         </Grid>
 
-        <!-- İÇERİK: DataGrid + Form -->
+       
         <Grid Grid.Row="2">
             <DataGrid x:Name="dgConfigurations"
                       SelectionMode="Extended"
@@ -183,7 +183,7 @@
             <ContentControl x:Name="configFormContainer" Visibility="Collapsed"/>
         </Grid>
 
-        <!-- ALT: Buton Panel -->
+       
         <StackPanel x:Name="buttonPanel"
                     Grid.Row="3"
                     Orientation="Horizontal"

@@ -8,13 +8,11 @@ public class Result
     public bool OutputMatch { get; set; }
     public string Output { get; set; }
     public string ErrorMessage { get; set; }
-
-    // Bu alanlar UI gösterimi için eklendi:
+    
     public string CompileStatus => CompilationSuccess ? "Success" : "Failed";
     public string RunStatus => ExecutionSuccess ? "Success" : "Failed";
     public string OutputMatchStatus => OutputMatch ? "Matched" : "Different";
-
-    // XAML'deki OutputMatch binding'i doðrudan bool yerine bu property'yi göstermek için kullanýlabilir
+    
     public string OutputMatchDisplay => OutputMatchStatus;
 
     public Result() { }

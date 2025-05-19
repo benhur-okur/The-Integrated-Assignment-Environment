@@ -24,7 +24,14 @@ namespace The_Integrated_Assignment_Environment
         {
             _projects = _dbHandler.LoadAll();
             lstProjects.ItemsSource = _projects;
+
+            // Placeholder 
+            if (_projects.Count == 0)
+                txtPlaceholder.Visibility = Visibility.Visible;
+            else
+                txtPlaceholder.Visibility = Visibility.Collapsed;
         }
+
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
@@ -54,5 +61,28 @@ namespace The_Integrated_Assignment_Environment
             welcomeWindow.Show();
             this.Close();
         }
+        
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstProjects.SelectedItem is not Project selectedProject)
+            {
+                System.Windows.MessageBox.Show("Please select a project to delete.");
+                return;
+            }
+
+            var result = System.Windows.MessageBox.Show(
+                $"Are you sure you want to delete the project '{selectedProject.ProjectName}'?",
+                "Confirm Delete",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _dbHandler.DeleteProject(selectedProject.ProjectName);
+                LoadProjects(); 
+                System.Windows.MessageBox.Show("Project deleted successfully.", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
     }
 }

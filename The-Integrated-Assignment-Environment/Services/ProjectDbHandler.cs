@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Text.Json;
+using Microsoft.Data.Sqlite;
 using The_Integrated_Assignment_Environment.Models;
 
 namespace The_Integrated_Assignment_Environment.Services
@@ -134,5 +135,16 @@ namespace The_Integrated_Assignment_Environment.Services
         {
             return LoadResults(projectName);
         }
+
+        public void DeleteProject(string projectName)
+        {
+            using var conn = new SQLiteConnection($"Data Source={dbPath};Version=3;");
+            conn.Open();
+
+            var cmd = new SQLiteCommand("DELETE FROM Projects WHERE ProjectName = @name", conn);
+            cmd.Parameters.AddWithValue("@name", projectName);
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

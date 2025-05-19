@@ -33,19 +33,16 @@ namespace The_Integrated_Assignment_Environment
             txtConfigurationName.Text = currentProject.Configuration.LanguageName;
             txtSubmissionFolder.Text = currentProject.SubmissionsFolderPath;
             txtExpectedOutputPath.Text = currentProject.ExpectedOutputFilePath;
-
-            // Eğer veritabanından sonuçlar geldiyse ekrana yansıt
+            
             foreach (var result in currentProject.Results)
                 ResultList.Add(result);
-
-            // Process otomatik çalışsın mı?
+            
             if (autoProcess)
             {
                 btnProcessAssignments.Visibility = Visibility.Collapsed;
                 AutoProcessAssignmentsSafely();
             }
-
-            // Eğer kayıtlı sonuç varsa save butonunu gösterme
+            
             btnSaveResults.Visibility = Visibility.Collapsed;
         }
 
@@ -53,13 +50,13 @@ namespace The_Integrated_Assignment_Environment
         {
             if (!Directory.Exists(currentProject.SubmissionsFolderPath))
             {
-                System.Windows.MessageBox.Show("Submissions folder bulunamadı. Lütfen geçerli bir klasör seçin.", "Klasör Hatası", MessageBoxButton.OK, MessageBoxImage.Warning);
+                System.Windows.MessageBox.Show("Submissions folder not found. Please select a valid folder.", "Folder Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (!File.Exists(currentProject.ExpectedOutputFilePath))
             {
-                System.Windows.MessageBox.Show("Expected output dosyası bulunamadı. Lütfen geçerli bir dosya seçin.", "Dosya Hatası", MessageBoxButton.OK, MessageBoxImage.Warning);
+                System.Windows.MessageBox.Show("Expected output file not found. Please select a valid .txt file.", "File Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -80,7 +77,7 @@ namespace The_Integrated_Assignment_Environment
 
             if (!suppressSuccessDialog)
             {
-                System.Windows.MessageBox.Show("Tüm ödevler işlendi!", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+                System.Windows.MessageBox.Show("All submissions has scanned.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
             btnSaveResults.Visibility = Visibility.Visible;
@@ -117,7 +114,7 @@ namespace The_Integrated_Assignment_Environment
         {
             var db = new ProjectDbHandler();
             db.UpdateProjectResults(currentProject);
-            System.Windows.MessageBox.Show("Sonuçlar başarıyla kaydedildi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            System.Windows.MessageBox.Show("Results successfully saved.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -148,6 +145,13 @@ namespace The_Integrated_Assignment_Environment
             var configWindow = new ConfigurationWindow();
             configWindow.ShowDialog();
             LoadConfigurations();
+        }
+        
+        private void btnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var helpWindow = new HelpWindow();
+            helpWindow.Owner = this; 
+            helpWindow.ShowDialog(); 
         }
         
     }

@@ -19,6 +19,18 @@
 		<Resource Include="Resources\logo.png" />
 		<None Remove="Resources\back.png" />
 		<Resource Include="Resources\back.png" />
+		<None Remove="Resources\help1.png" />
+		<Resource Include="Resources\help1.png" />
+		<None Remove="Resources\help2.png" />
+		<Resource Include="Resources\help2.png" />
+		<None Remove="Resources\help3.png" />
+		<Resource Include="Resources\help3.png" />
+		<None Remove="Resources\help4.png" />
+		<Resource Include="Resources\help4.png" />
+		<None Remove="Resources\help5.png" />
+		<Resource Include="Resources\help5.png" />
+		<None Remove="Resources\help6.png" />
+		<Resource Include="Resources\help6.png" />
 	</ItemGroup>
 
 	<ItemGroup>

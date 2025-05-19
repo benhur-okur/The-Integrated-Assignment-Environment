@@ -58,7 +58,7 @@ public class AssignmentProcessor
 
             if (result.CompilationSuccess)
             {
-                result = runner.Run(submission, project, result); // ✅ Güncellenmiş çağrı
+                result = runner.Run(submission, project, result); 
             }
 
             project.Results.Add(result);

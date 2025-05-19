@@ -27,34 +27,31 @@ namespace The_Integrated_Assignment_Environment
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             var form = new ConfigurationForm();
-            form.OnSave += (config) =>
+            form.OnSave += config =>
             {
                 ConfigurationService.Add(config);
                 LoadConfigurations();
-                ShowDataGrid();
+                ToggleFormView(false);
             };
-            form.OnCancel += ShowDataGrid;
-
+            form.OnCancel += () => ToggleFormView(false);
             configFormContainer.Content = form;
-            ShowForm();
+            ToggleFormView(true);
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            if (dgConfigurations.SelectedItems.Count == 1 &&
-                dgConfigurations.SelectedItem is Configuration selected)
+            if (dgConfigurations.SelectedItem is Configuration selected)
             {
                 var form = new ConfigurationForm(selected);
-                form.OnSave += (config) =>
+                form.OnSave += config =>
                 {
                     ConfigurationService.Update(config);
                     LoadConfigurations();
-                    ShowDataGrid();
+                    ToggleFormView(false);
                 };
-                form.OnCancel += ShowDataGrid;
-
+                form.OnCancel += () => ToggleFormView(false);
                 configFormContainer.Content = form;
-                ShowForm();
+                ToggleFormView(true);
             }
             else
             {
@@ -105,6 +102,17 @@ namespace The_Integrated_Assignment_Environment
             configFormContainer.Visibility = Visibility.Collapsed;
             dgConfigurations.Visibility = Visibility.Visible;
             buttonPanel.Visibility = Visibility.Visible;
+        }
+
+        private void ToggleFormView(bool showForm)
+        {
+            configFormContainer.Visibility = showForm ? Visibility.Visible : Visibility.Collapsed;
+            dgConfigurations.Visibility = showForm ? Visibility.Collapsed : Visibility.Visible;
+            buttonPanel.Visibility = showForm ? Visibility.Collapsed : Visibility.Visible;
+
+            // Import & Export butonlarını gizle/göster
+            btnImport.Visibility = showForm ? Visibility.Collapsed : Visibility.Visible;
+            btnExport.Visibility = showForm ? Visibility.Collapsed : Visibility.Visible;
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)

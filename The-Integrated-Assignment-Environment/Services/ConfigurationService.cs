@@ -16,8 +16,7 @@ namespace The_Integrated_Assignment_Environment.Services
             var list = new ObservableCollection<Configuration>();
             using var conn = new SQLiteConnection($"Data Source={dbPath};Version=3;");
             conn.Open();
-
-            // Tabloyu oluştur (gerekirse)
+            
             var createTableCmd = new SQLiteCommand(@"
                 CREATE TABLE IF NOT EXISTS Configurations (
                     Language TEXT PRIMARY KEY,
@@ -25,8 +24,7 @@ namespace The_Integrated_Assignment_Environment.Services
                     RunCommand TEXT
                 )", conn);
             createTableCmd.ExecuteNonQuery();
-
-            // Verileri çek
+            
             var selectCmd = new SQLiteCommand("SELECT * FROM Configurations", conn);
             using var reader = selectCmd.ExecuteReader();
             while (reader.Read())
@@ -122,7 +120,7 @@ namespace The_Integrated_Assignment_Environment.Services
                 cmd.ExecuteNonQuery();
             }
 
-            return LoadAll(); // return updated list
+            return LoadAll(); 
         }
     }
 }

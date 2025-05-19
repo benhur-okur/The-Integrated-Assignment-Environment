@@ -25,6 +25,17 @@ namespace The_Integrated_Assignment_Environment.Data
                 );";
             cmd.ExecuteNonQuery();
         }
+        
+        public void DeleteProject(string projectName)
+        {
+            using var conn = new SqliteConnection(ConnectionString);
+            conn.Open();
+
+            var cmd = conn.CreateCommand();
+            cmd.CommandText = "DELETE FROM Projects WHERE ProjectName = $name";
+            cmd.Parameters.AddWithValue("$name", projectName);
+            cmd.ExecuteNonQuery();
+        }
 
         public void InsertProject(Project project)
         {
@@ -73,6 +84,9 @@ namespace The_Integrated_Assignment_Environment.Data
 
             return projects;
         }
+        
+        
+
 
     }
 }
